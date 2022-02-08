@@ -3,6 +3,7 @@
     background-color: var(--menu-color);
     list-style: none;
     border-radius: 2rem;
+    animation: start 1s forwards;
 
     li {
         color: var(--white-color);
@@ -22,13 +23,23 @@
 
     &.hidden {
         position: absolute;
-        animation: slide 0.3s forwards;
+        animation: slide 1s forwards;
     }
 
     @keyframes slide {
         100% { 
             opacity: 0;
-            transform: translateX(-30vw); 
+            transform: translateX(-100vw); 
+        }
+    }
+
+    @keyframes start {
+        0% {
+            opacity: 0;
+        }
+    
+        100% { 
+            opacity: 1;
         }
     }
 }

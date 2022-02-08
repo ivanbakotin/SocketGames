@@ -3,6 +3,8 @@
   background-color: var(--menu-color);
   list-style: none;
   border-radius: 2rem;
+  -webkit-animation: start 1s forwards;
+          animation: start 1s forwards;
 }
 
 .menu li {
@@ -23,24 +25,70 @@
 
 .menu.hidden {
   position: absolute;
-  -webkit-animation: slide 0.3s forwards;
-          animation: slide 0.3s forwards;
+  -webkit-animation: slide 1s forwards;
+          animation: slide 1s forwards;
 }
 
 @-webkit-keyframes slide {
   100% {
     opacity: 0;
-    -webkit-transform: translateX(-30vw);
-            transform: translateX(-30vw);
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
   }
 }
 
 @keyframes slide {
   100% {
     opacity: 0;
-    -webkit-transform: translateX(-30vw);
-            transform: translateX(-30vw);
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
   }
+}
+
+@-webkit-keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.game {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: var(--menu-color);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.game > * {
+  color: white;
+  font-size: 2rem;
+}
+
+.game input {
+  color: black;
+}
+
+.game > *:not(:last-child) {
+  margin-bottom: 20%;
 }
 
 *, *::after, *::before {
@@ -99,10 +147,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.container .game {
-  display: none;
 }
 
 .container .leaderboard {
