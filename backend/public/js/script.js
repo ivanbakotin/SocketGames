@@ -1,13 +1,17 @@
-const game = document.querySelector(".game");
 const menu = document.querySelector(".menu");
-const leaderboardButton = document.querySelector(".friends-button");
+const preGame = document.querySelector(".pregame");
+const game = document.querySelector(".game");
+const gameOver = document.querySelector(".gameover")
 const playButton = document.querySelector(".play-button");
+const friendsButton = document.querySelector(".friends-button");
 const targetText = document.querySelector(".target-text");
 const inputText = document.querySelector(".input-text");
 const timer = document.querySelector(".timer");
-const gameOver = document.querySelector(".gameover")
+const linkGame = document.querySelector(".link-game");
 
 const socket = io();
+
+friendsButton.addEventListener("click", pregameSetup);
 
 playButton.addEventListener("click", startGame);
 inputText.addEventListener("input", checkInput);
@@ -74,6 +78,14 @@ function startGame() {
     getNewWord();
 }
 
-socket.on('chat message', function(msg) {
-    console.log(msg)
+
+
+function pregameSetup() {
+    menu.classList.add("hidden");
+    preGame.style.display = "flex";
+    socket.emit('get-link');  
+}
+
+socket.on('send-link', function(id) {
+    linkGame.innerText = window.location.href + id;
 });

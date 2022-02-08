@@ -1,5 +1,6 @@
 @import "_menu.scss";
 @import "_game.scss";
+@import "_pregame.scss";
 @import "_mixin.scss";
 
 *, *::after, *::before {
@@ -14,7 +15,7 @@
     --background-body-color: rgb(29, 27, 27);
     --menu-color: rgb(68, 67, 67);
 
-    --font-text-size: clamp(2rem, 2vw, 4rem);
+    --font-text-size: clamp(1rem, 2vw, 4rem);
 }
 
 body {

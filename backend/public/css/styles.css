@@ -116,6 +116,52 @@
   background-color: var(--background-body-color);
 }
 
+.pregame {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: var(--menu-color);
+  padding: 2rem;
+  border-radius: 2rem;
+  -webkit-animation: start 1s forwards;
+          animation: start 1s forwards;
+}
+
+.pregame > * {
+  color: white;
+  font-size: var(--font-text-size);
+}
+
+.pregame > *:not(:last-child) {
+  margin-bottom: 5%;
+}
+
+.pregame label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.pregame input {
+  color: black;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2px;
+}
+
+@keyframes slide {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
 *, *::after, *::before {
   padding: 0;
   margin: 0;
@@ -128,7 +174,7 @@
   --white-color: rgb(255, 255, 255);
   --background-body-color: rgb(29, 27, 27);
   --menu-color: rgb(68, 67, 67);
-  --font-text-size: clamp(2rem, 2vw, 4rem);
+  --font-text-size: clamp(1rem, 2vw, 4rem);
 }
 
 body {
