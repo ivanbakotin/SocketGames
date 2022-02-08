@@ -7,6 +7,8 @@ const inputText = document.querySelector(".input-text");
 const timer = document.querySelector(".timer");
 const gameOver = document.querySelector(".gameover")
 
+const socket = io();
+
 playButton.addEventListener("click", startGame);
 inputText.addEventListener("input", checkInput);
 
@@ -41,7 +43,7 @@ function startTimer() {
 }
 
 function checkGameOver(intervalId, time) {
-    if (time > 2) {
+    if (time > 100) {
         clearInterval(intervalId);
         inputText.removeEventListener("input", checkInput);
         gameOver.style.display = "flex";
@@ -54,6 +56,9 @@ function getNewWord() {
 }
 
 function checkInput(e) {
+
+    socket.emit('chat message', e.target.value);
+
     if (e.target.value === targetText.innerText) {
         inputText.value = "";
         getNewWord();
@@ -68,3 +73,7 @@ function startGame() {
     startTimer();
     getNewWord();
 }
+
+socket.on('chat message', function(msg) {
+    console.log(msg)
+});

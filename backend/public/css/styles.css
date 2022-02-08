@@ -76,6 +76,8 @@
   background-color: var(--menu-color);
   padding: 2rem;
   border-radius: 2rem;
+  -webkit-animation: start 1s forwards;
+          animation: start 1s forwards;
 }
 
 .game > * {
@@ -85,10 +87,21 @@
 
 .game input {
   color: black;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2px;
 }
 
 .game > *:not(:last-child) {
   margin-bottom: 20%;
+}
+
+@keyframes slide {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
 }
 
 .gameover {
