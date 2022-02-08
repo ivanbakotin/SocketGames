@@ -4,7 +4,6 @@
     list-style: none;
     border-radius: 2rem;
 
-
     li {
         color: var(--white-color);
         font-size: 2rem;
@@ -19,5 +18,17 @@
 
     li:not(:last-child) {
         margin-bottom: 33%;
+    }
+
+    &.hidden {
+        position: absolute;
+        animation: slide 0.3s forwards;
+    }
+
+    @keyframes slide {
+        100% { 
+            opacity: 0;
+            transform: translateX(-30vw); 
+        }
     }
 }

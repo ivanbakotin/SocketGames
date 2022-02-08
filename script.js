@@ -7,5 +7,5 @@ const playButton = document.querySelector(".play-button");
 playButton.addEventListener("click", displayGame);
 
 function displayGame() {
-    console.log("game")
+    menu.classList.add("hidden"); 
 }

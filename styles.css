@@ -21,6 +21,28 @@
   margin-bottom: 33%;
 }
 
+.menu.hidden {
+  position: absolute;
+  -webkit-animation: slide 0.3s forwards;
+          animation: slide 0.3s forwards;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-30vw);
+            transform: translateX(-30vw);
+  }
+}
+
+@keyframes slide {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-30vw);
+            transform: translateX(-30vw);
+  }
+}
+
 *, *::after, *::before {
   padding: 0;
   margin: 0;
