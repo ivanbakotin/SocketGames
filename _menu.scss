@@ -1,5 +1,5 @@
 .menu {
-    padding: 5rem;
+    padding: var(--font-text-size);
     background-color: var(--menu-color);
     list-style: none;
     border-radius: 2rem;
@@ -18,7 +18,7 @@
     } 
 
     li:not(:last-child) {
-        margin-bottom: 33%;
+        margin-bottom: 25%;
     }
 
     &.hidden {

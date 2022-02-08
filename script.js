@@ -1,11 +1,11 @@
 const game = document.querySelector(".game");
 const menu = document.querySelector(".menu");
-const leaderboard = document.querySelector(".leaderboard");
-const leaderboardButton = document.querySelector(".leaderboard-button");
+const leaderboardButton = document.querySelector(".friends-button");
 const playButton = document.querySelector(".play-button");
 const targetText = document.querySelector(".target-text");
 const inputText = document.querySelector(".input-text");
 const timer = document.querySelector(".timer");
+const gameOver = document.querySelector(".gameover")
 
 playButton.addEventListener("click", startGame);
 inputText.addEventListener("input", checkInput);
@@ -16,7 +16,7 @@ function startTimer() {
     let min = 0;
     let hour = 0;
 
-    setInterval(() => {
+    const intervalId = setInterval(() => {
 
         sec++;
 
@@ -35,7 +35,17 @@ function startTimer() {
         (sec.toString().length === 1) ? sec = "0" + sec : null;  
 
         timer.innerText = hour + ":" + min + ":" + sec;
+
+        checkGameOver(intervalId, hour * 3600 + min * 60 + sec);
     }, 1000) 
+}
+
+function checkGameOver(intervalId, time) {
+    if (time > 2) {
+        clearInterval(intervalId);
+        inputText.removeEventListener("input", checkInput);
+        gameOver.style.display = "flex";
+    }
 }
 
 function getNewWord() {

@@ -13,7 +13,7 @@
     --background-body-color: rgb(29, 27, 27);
     --menu-color: rgb(68, 67, 67);
 
-    --font-text-size: clamp(2rem, 3vw, 4rem);
+    --font-text-size: clamp(2rem, 2vw, 4rem);
 }
 
 body {
@@ -29,7 +29,14 @@ body {
 
     h1 {
         text-align: center;
-        font-size: 5rem;
+        font-size: clamp(3rem, 4vw, 4rem);
+        color: var(--white-color);
+    }
+
+    h2 {
+        margin-top: 5%;
+        text-align: center;
+        font-size: clamp(2rem, 2.5vw, 4rem);
         color: var(--white-color);
     }
 }
@@ -40,8 +47,4 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    .leaderboard {
-        display: none;
-    }
 }
