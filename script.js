@@ -7,7 +7,7 @@ const targetText = document.querySelector(".target-text");
 const inputText = document.querySelector(".input-text");
 const timer = document.querySelector(".timer");
 
-playButton.addEventListener("click", displayGame);
+playButton.addEventListener("click", startGame);
 inputText.addEventListener("input", checkInput);
 
 function startTimer() {
@@ -45,11 +45,12 @@ function getNewWord() {
 
 function checkInput(e) {
     if (e.target.value === targetText.innerText) {
+        inputText.value = "";
         getNewWord();
     }
 }
 
-function displayGame() {
+function startGame() {
 
     menu.classList.add("hidden"); 
     game.style.display = "flex";
