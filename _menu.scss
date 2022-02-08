@@ -1,0 +1,23 @@
+.menu {
+    padding: 5rem;
+    background-color: var(--menu-color);
+    list-style: none;
+    border-radius: 2rem;
+
+
+    li {
+        color: var(--white-color);
+        font-size: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    } 
+
+    li:not(:last-child) {
+        margin-bottom: 33%;
+    }
+}
