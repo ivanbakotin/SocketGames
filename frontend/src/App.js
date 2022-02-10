@@ -10,18 +10,13 @@ function App() {
     <BrowserRouter>
       <Header />
 
-      
-
-      <main className="container">
       <SocketContext.Provider value={socket}>
-      
         <Routes>
           <Route path="/" element={<Menu />}></Route>
           <Route path="/game/:id" element={<Game />}></Route>
           <Route path="/lobby/:id" element={<Lobby />}></Route>
         </Routes> 
       </SocketContext.Provider>
-      </main>
 
     </BrowserRouter>
   );

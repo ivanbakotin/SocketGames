@@ -1,0 +1,44 @@
+.container-lobby {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .lobby {
+        margin: 0 2rem;
+        padding: 2.5rem;
+        border-radius: 2rem;
+        background-color: rgb(73, 72, 72);
+        font-size: clamp(2rem, 2vw, 3rem);
+
+        .game-link {
+            font-size: clamp(0.8rem, 1.5vw, 2rem);
+            color: white;
+            cursor: pointer;
+            border-bottom: solid white 1px;
+        }
+
+        button {
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+        }
+
+        .player-list {
+            .player {
+                display: flex;
+                p {
+                    font-size: clamp(1rem, 1.5vw, 2rem);
+                    color: white;
+                    margin-right: 2rem;
+                }
+                .ready {
+                    font-size: clamp(1rem, 1.5vw, 2rem);
+                    background-color: rgb(161, 50, 50);
+                }
+
+                .active {
+                    background-color: rgb(72, 161, 101);
+                }
+            }
+        }
+    }
+}

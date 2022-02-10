@@ -37,8 +37,9 @@ const Lobby = () => {
     }
 
     return (
+        <main className="container-lobby">
+        <Nickname />
         <section className="lobby">
-            <Nickname />
 
             <div className="game-link">{window.location.href}</div>
 
@@ -52,7 +53,7 @@ const Lobby = () => {
                         <div className="player" key={player.id}>
                             <p className="nickname">{player.nickname}</p>
                             <button 
-                                className={socket.ready ? "ready active" : "ready"} 
+                                className={player.ready ? "ready active" : "ready"} 
                                 onClick={setReady}>
                                     Ready
                             </button>
@@ -61,6 +62,7 @@ const Lobby = () => {
                 })}
             </div>
         </section>
+        </main>
     )
 }
 

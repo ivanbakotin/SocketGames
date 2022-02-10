@@ -1,0 +1,24 @@
+.container-nickname {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem;
+
+    .nickname-form {
+        font-size: clamp(2rem, 2vw, 3rem);
+        background-color: rgb(66, 64, 64);
+        padding: 2.5rem;
+        border-radius: 2rem;
+
+        * {
+            margin: 0.5rem 1rem;
+        }
+    
+        label {
+            color: white;
+        }
+
+        button {
+            padding: 0.1rem;
+        }
+    }
+}

@@ -22,19 +22,20 @@ const Game = () => {
     }
 
     return (
+        <main className="container-game">
         <div className="game">
-            <div className="target-word"></div>
-            <input type="text" name="input-word" className="input-word" />
+            <div className="players">
             {players.map(player => {
                 return (
-                    <div key={player.id}>
-                        {player.nickname}
-                        {player.points}
+                    <div className="player" key={player.id}>
+                        <p>{player.nickname}</p>
                         <button onClick={addCounter}>{player.counter}</button>
                     </div>
                 )
             })}
+            </div>
         </div>
+        </main>
     )
 }
 

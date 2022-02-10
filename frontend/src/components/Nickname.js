@@ -20,11 +20,13 @@ const Nickname = () => {
     }
 
     return (
-        <form onSubmit={goToMenu}>
+        <section className="container-nickname">
+        <form className="nickname-form" onSubmit={goToMenu}>
             <label htmlFor="nickname">Nickname:</label>
             <input onChange={handleInput} type="text" id="nickname" name="nickname"></input>
-            <button type="submit">Submit</button>
+            <button type="submit">SEND</button>
         </form>
+        </section>
     )
 }
 

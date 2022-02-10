@@ -12,6 +12,170 @@
   font-size: clamp(1.5rem, 2.5vw, 3.5rem);
 }
 
+.container-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-menu .menu {
+  background-color: #494848;
+  padding: 5%;
+  list-style: none;
+  text-align: center;
+  border-radius: 2rem;
+}
+
+.container-menu .menu li {
+  font-size: clamp(2rem, 2vw, 3rem);
+  color: white;
+  cursor: pointer;
+}
+
+.container-menu .menu li:hover {
+  opacity: 0.5;
+}
+
+.container-menu .menu li:not(:last-child) {
+  margin-bottom: 15%;
+}
+
+.container-nickname {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 2rem;
+}
+
+.container-nickname .nickname-form {
+  font-size: clamp(2rem, 2vw, 3rem);
+  background-color: #424040;
+  padding: 2.5rem;
+  border-radius: 2rem;
+}
+
+.container-nickname .nickname-form * {
+  margin: 0.5rem 1rem;
+}
+
+.container-nickname .nickname-form label {
+  color: white;
+}
+
+.container-nickname .nickname-form button {
+  padding: 0.1rem;
+}
+
+.container-lobby {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.container-lobby .lobby {
+  margin: 0 2rem;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background-color: #494848;
+  font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.container-lobby .lobby .game-link {
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
+  color: white;
+  cursor: pointer;
+  border-bottom: solid white 1px;
+}
+
+.container-lobby .lobby button {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.container-lobby .lobby .player-list .player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-lobby .lobby .player-list .player p {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  color: white;
+  margin-right: 2rem;
+}
+
+.container-lobby .lobby .player-list .player .ready {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  background-color: #a13232;
+}
+
+.container-lobby .lobby .player-list .player .active {
+  background-color: #48a165;
+}
+
+.container-game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.container-game .game {
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background-color: #494848;
+  font-size: clamp(2rem, 2vw, 3rem);
+  color: white;
+}
+
+.container-game .game .players .player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1.5rem 0;
+}
+
+.container-game .game .players .player p {
+  font-size: clamp(2rem, 2vw, 3rem);
+  color: white;
+  margin-right: 2rem;
+}
+
+.container-game .game .players .player button {
+  font-size: clamp(2rem, 2vw, 3rem);
+}
+
 *, *::after, *::before {
   padding: 0;
   margin: 0;
@@ -21,7 +185,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   background-color: #1b1b1b;
 }

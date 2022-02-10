@@ -1,4 +1,8 @@
 @import "./header";
+@import "./menu";
+@import "./_nickname.scss";
+@import "./_lobby.scss";
+@import "./game";
 
 *, *::after, *::before {
     padding: 0;
@@ -8,7 +12,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+#root {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     background-color: rgb(27, 27, 27);
 }
