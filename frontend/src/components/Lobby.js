@@ -17,8 +17,8 @@ const Lobby = () => {
             setPlayers(users);
         })
 
-        socket.on('navigate-game', users => {
-            navigate("/");
+        socket.on('navigate-game', () => {
+            navigate(`/game/${id}`);
         })
     }, [])
 

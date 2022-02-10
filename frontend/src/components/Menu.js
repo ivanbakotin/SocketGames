@@ -9,8 +9,8 @@ const Menu = () => {
 
     function getLink() {
         socket.emit("get-link");
-        socket.on('send-link', token => {
-            navigate(`/lobby/${token}`);
+        socket.on('send-link', id => {
+            navigate(`/lobby/${id}`);
         });
     }
 
