@@ -1,0 +1,14 @@
+@import "./header";
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(27, 27, 27);
+}

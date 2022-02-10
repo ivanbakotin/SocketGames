@@ -1,10 +1,10 @@
+const path = require("path")
 const express = require("express");
 const http = require("http");
 const port = process.env.PORT || 8000;
 const app = express();
 const server = http.createServer(app);
 const crypto = require("crypto");
-import { dictionary } from "./dictionary";
 
 const io = require("socket.io")(server, {
 	cors: {
@@ -22,7 +22,7 @@ function getUsers(io, id) {
   
     for (const clientId of clients ) {
       const clientSocket = io.sockets.sockets.get(clientId);
-      users.push({ id: clientId, nickname: clientSocket.nickname, ready: clientSocket.ready });
+      users.push({ id: clientId, nickname: clientSocket.nickname, ready: clientSocket.ready, counter: clientSocket.counter });
     }
       
     io.sockets.in(id).emit('get-users', users);
@@ -59,7 +59,12 @@ io.on("connection", socket => {
 
   socket.on("join-room", id => {
     socket.ready = false;
+    socket.counter = 0;
     socket.join(id);
+    getUsers(io, id);
+  })
+
+  socket.on("send-users", id => {
     getUsers(io, id);
   })
 
@@ -77,6 +82,11 @@ io.on("connection", socket => {
   socket.on("leave-lobby", id => {
     socket.leave(id);
     getUsers(io, id);
+  })
+
+  socket.on("add-counter", id => {
+    socket.counter += 1;
+    getUsers(io, id)
   })
 
 })

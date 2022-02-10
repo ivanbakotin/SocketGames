@@ -1,8 +1,8 @@
 const Header = () => {
     return (
         <header className="header">
-            <h1>Typing Game</h1>
-            <h2>Play solo or against friends or strangers<br/>to find out who can type the fastest!</h2>
+            <h1>Socket Games</h1>
+            <h2>Play solo or against friends<br/>no login required no registration just play!</h2>
         </header>
     )
 }
