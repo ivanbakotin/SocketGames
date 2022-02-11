@@ -84,11 +84,7 @@ io.on("connection", socket => {
     getUsers(io, id);
   })
 
-  socket.on("add-counter", id => {
-    socket.counter += 1;
-    getUsers(io, id)
-  })
-
+  socket.on('drawing', (data) => io.sockets.in(data.id).emit('drawing', data));
 })
 
 server.listen(port, () => console.log(`Listening on port ${port}`));

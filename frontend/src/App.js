@@ -1,6 +1,5 @@
 import { SocketContext, socket } from './context/socket';
 import {BrowserRouter, Routes, Route } from "react-router-dom"
-import Header from "./components/Header"
 import Menu from "./components/Menu"
 import Game from "./components/Game"
 import Lobby from "./components/Lobby"
@@ -8,8 +7,6 @@ import Lobby from "./components/Lobby"
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-
       <SocketContext.Provider value={socket}>
         <Routes>
           <Route path="/" element={<Menu />}></Route>
@@ -17,7 +14,6 @@ function App() {
           <Route path="/lobby/:id" element={<Lobby />}></Route>
         </Routes> 
       </SocketContext.Provider>
-
     </BrowserRouter>
   );
 } 

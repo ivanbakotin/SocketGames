@@ -1,31 +1,27 @@
-.container-game {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    
-    .game {
-        padding: 2.5rem;
-        border-radius: 2rem;
-        background-color: rgb(73, 72, 72);
-        font-size: clamp(2rem, 2vw, 3rem);
-        color: white;
 
-        .players {
-            .player {
-                display: flex;
-                margin: 1.5rem 0;
-
-                p {
-                    font-size: clamp(2rem, 2vw, 3rem);
-                    color: white;
-                    margin-right: 2rem;
-                }
-        
-                button {
-                    font-size: clamp(2rem, 2vw, 3rem);
-                }
-            }
-        }
-    }
-}
+    .whiteboard {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: white;
+      }
+      
+      .colors {
+        position: fixed;
+      }
+      
+      .color {
+        display: inline-block;
+        height: 48px;
+        width: 48px;
+      }
+      
+      .color.black { background-color: black; }
+      .color.red { background-color: red; }
+      .color.green { background-color: green; }
+      .color.blue { background-color: blue; }
+      .color.yellow { background-color: yellow; }

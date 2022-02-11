@@ -103,13 +103,6 @@
   font-size: clamp(2rem, 2vw, 3rem);
 }
 
-.container-lobby .lobby .game-link {
-  font-size: clamp(0.8rem, 1.5vw, 2rem);
-  color: white;
-  cursor: pointer;
-  border-bottom: solid white 1px;
-}
-
 .container-lobby .lobby button {
   margin-bottom: 1rem;
   margin-right: 1rem;
@@ -136,44 +129,45 @@
   background-color: #48a165;
 }
 
-.container-game {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+.whiteboard {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: white;
 }
 
-.container-game .game {
-  padding: 2.5rem;
-  border-radius: 2rem;
-  background-color: #494848;
-  font-size: clamp(2rem, 2vw, 3rem);
-  color: white;
+.colors {
+  position: fixed;
 }
 
-.container-game .game .players .player {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 1.5rem 0;
+.color {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
 }
 
-.container-game .game .players .player p {
-  font-size: clamp(2rem, 2vw, 3rem);
-  color: white;
-  margin-right: 2rem;
+.color.black {
+  background-color: black;
 }
 
-.container-game .game .players .player button {
-  font-size: clamp(2rem, 2vw, 3rem);
+.color.red {
+  background-color: red;
+}
+
+.color.green {
+  background-color: green;
+}
+
+.color.blue {
+  background-color: blue;
+}
+
+.color.yellow {
+  background-color: yellow;
 }
 
 *, *::after, *::before {

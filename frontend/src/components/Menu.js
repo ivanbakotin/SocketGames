@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { SocketContext } from "../context/socket"
 import { useContext } from "react";
+import Header from "./Header"
 
 const Menu = () => {
 
@@ -15,6 +16,8 @@ const Menu = () => {
     }
 
     return (
+        <>
+        <Header />
         <main className="container-menu">
         <ul className="menu">
             <li onClick={getLink}>Play</li>
@@ -22,6 +25,7 @@ const Menu = () => {
             <li>Settings</li>
         </ul>
         </main>
+        </>
     )
 }
 

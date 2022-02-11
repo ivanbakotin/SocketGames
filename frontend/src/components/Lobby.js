@@ -41,8 +41,6 @@ const Lobby = () => {
         <Nickname />
         <section className="lobby">
 
-            <div className="game-link">{window.location.href}</div>
-
             <button onClick={leaveLobby}>Leave Lobby</button>
 
             <button onClick={startGame}>Start Game</button>
