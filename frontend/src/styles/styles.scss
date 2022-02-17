@@ -4,6 +4,10 @@
 @import "./_lobby.scss";
 @import "./game";
 
+body {
+  overscroll-behavior: contain;
+}
+
 *, *::after, *::before {
     padding: 0;
     margin: 0;
