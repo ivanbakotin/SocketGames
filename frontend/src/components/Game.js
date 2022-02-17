@@ -106,13 +106,8 @@ const Game = () => {
     canvas.addEventListener('touchcancel', onMouseUp, false);
     canvas.addEventListener('touchmove', throttle(onMouseMove, 10), false);
 
-    const onResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', onResize, false);
-    onResize();
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     const onDrawingEvent = (data) => {
       const w = canvas.width;

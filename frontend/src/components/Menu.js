@@ -1,32 +1,26 @@
 import { useNavigate } from "react-router-dom"
-import { SocketContext } from "../context/socket"
-import { useContext } from "react";
 import Header from "./Header"
 
 const Menu = () => {
 
-    const socket = useContext(SocketContext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    function getLink() {
-        socket.emit("get-link");
-        socket.on('send-link', id => {
-            navigate(`/lobby/${id}`);
-        });
-    }
+  function goToGameList() {
+    navigate("/gamelist");
+  }
 
-    return (
-        <>
-        <Header />
-        <main className="container-menu">
-        <ul className="menu">
-            <li onClick={getLink}>Play</li>
-            <li>Play With Strangers</li>
-            <li>Settings</li>
-        </ul>
-        </main>
-        </>
-    )
+  return (
+    <>
+    <Header />
+    <main className="container-menu">
+      <ul className="menu">
+        <li onClick={goToGameList}>Play</li>
+        <li>Play With Strangers</li>
+        <li>Settings</li>
+      </ul>
+    </main>
+    </>
+  )
 }
 
 export default Menu;

@@ -1,0 +1,1 @@
+export const gameList = [ {name: "Typing Game"}, {name: "Drawing Game"}];
