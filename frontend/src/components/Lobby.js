@@ -11,13 +11,22 @@ const Lobby = () => {
   const [ players, setPlayers ] = useState([])
   
   useEffect(() => {
-      socket.emit("join-room", id)
-      socket.on('get-users', users => {
-          setPlayers(users);
-      })
-      socket.on('navigate-game', () => {
-          navigate(`/game/${id}`);
-      })
+
+    socket.emit("join-room", id)
+
+    socket.on('get-users', users => {
+      setPlayers(users);
+    })
+
+    socket.on('navigate-game', () => {
+      navigate(`/game/${id}`);
+    })
+
+    return () => {
+      socket.off('get-users');
+      socket.off('navigate-game');
+    }
+
   }, [])
 
   function setReady() {

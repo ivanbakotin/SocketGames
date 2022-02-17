@@ -1,1 +1,10 @@
-export const gameList = [ {name: "Typing Game"}, {name: "Drawing Game"}];
+export const gameList = [ 
+  {
+    display: "Typing Game",
+    name: "typing",
+  }, 
+  {
+    display: "Drawing Game",
+    name: "drawing"
+  }
+];

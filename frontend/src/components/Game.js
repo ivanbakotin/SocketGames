@@ -3,23 +3,25 @@ import { useContext, useEffect, useState, useRef } from "react";
 
 const Game = () => {
 
-    const socket = useContext(SocketContext);
+  const socket = useContext(SocketContext);
+  const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1)
+  const [ players, setPlayers ] = useState([]);
+  
+  useEffect(() => {
+    socket.emit("send-users", id);
 
-    const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1)
+    socket.on('get-users', users => {
+      setPlayers(users);
+    })
 
-    const [ players, setPlayers ] = useState([]);
-    
-    useEffect(() => {
-        socket.emit("send-users", id);
+    return () => {
+      socket.off('get-users');
+    }
+  }, [])
 
-        socket.on('get-users', users => {
-            setPlayers(users);
-        })
-    }, [])
-
-    const canvasRef = useRef(null);
-    const colorsRef = useRef(null);
-    const socketRef = useRef();
+  const canvasRef = useRef(null);
+  const colorsRef = useRef(null);
+  const socketRef = useRef();
 
   useEffect(() => {
 

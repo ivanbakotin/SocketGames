@@ -21,6 +21,7 @@ const GameList = () => {
     {gameList.map(game => {
       return (
         <div 
+          key={game.name}
           onClick={goToLobby} 
           name={game.name} 
           className="game">

@@ -15,8 +15,6 @@ const Menu = () => {
     <main className="container-menu">
       <ul className="menu">
         <li onClick={goToGameList}>Play</li>
-        <li>Play With Strangers</li>
-        <li>Settings</li>
       </ul>
     </main>
     </>
