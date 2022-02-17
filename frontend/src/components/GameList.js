@@ -17,18 +17,18 @@ const GameList = () => {
 
   return (
     <section className="gamelist">
-    <h1>Choose a game to play!</h1>
-    {gameList.map(game => {
-      return (
-        <div 
-          key={game.name}
-          onClick={goToLobby} 
-          name={game.name} 
-          className="game">
-          {game.name}
-        </div>
-      )
-    })}
+      <h1>Choose a game to play!</h1>
+      {gameList.map(game => {
+        return (
+          <div 
+            key={game.name}
+            onClick={goToLobby} 
+            name={game.name} 
+            className="game">
+            {game.name}
+          </div>
+        )
+      })}
     </section>
   )
 }

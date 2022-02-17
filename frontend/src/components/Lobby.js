@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { SocketContext } from "../context/socket"
 import { useContext, useEffect, useState } from "react";
 import Nickname from "./Nickname";
+import LobbyChat from "./LobbyChat";
 
 const Lobby = () => {
 
@@ -44,26 +45,29 @@ const Lobby = () => {
 
   return (
     <main className="container-lobby">
-    <Nickname />
-    <section className="lobby">
-      <button onClick={leaveLobby}>Leave Lobby</button>
-      <button onClick={startGame}>Start Game</button>
-      
-      <div className="player-list">
-        {players.map(player => {
-          return (
-            <div className="player" key={player.id}>
-              <p className="nickname">{player.nickname}</p>
-              <button 
-                className={player.ready ? "ready active" : "ready"} 
-                onClick={setReady}>
-                    Ready
-              </button>
-            </div>
-          )
-        })}
+      <Nickname />
+      <div>
+        <section className="lobby">
+          <button onClick={leaveLobby}>Leave Lobby</button>
+          <button onClick={startGame}>Start Game</button>
+
+          <div className="player-list">
+            {players.map(player => {
+              return (
+                <div className="player" key={player.id}>
+                  <p className="nickname">{player.nickname}</p>
+                  <button 
+                    className={player.ready ? "ready active" : "ready"} 
+                    onClick={setReady}>
+                        Ready
+                  </button>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+        <LobbyChat />
       </div>
-    </section>
     </main>
   )
 }

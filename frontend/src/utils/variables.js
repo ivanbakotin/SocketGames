@@ -6,5 +6,5 @@ export const gameList = [
   {
     display: "Drawing Game",
     name: "drawing"
-  }
+  },
 ];
