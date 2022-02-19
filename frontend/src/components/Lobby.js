@@ -12,7 +12,6 @@ const Lobby = () => {
   const [ players, setPlayers ] = useState([])
   
   useEffect(() => {
-
     socket.emit("join-room", id)
 
     socket.on('get-users', users => {
@@ -20,15 +19,14 @@ const Lobby = () => {
     })
 
     socket.on('navigate-game', () => {
-      navigate(`/game/${id}`);
+      navigate(`/game/${type}/${id}`);
     })
 
     return () => {
       socket.off('get-users');
       socket.off('navigate-game');
     }
-
-  }, [])
+  }, [type])
 
   function setReady() {
       socket.emit("set-ready", id);
@@ -46,7 +44,7 @@ const Lobby = () => {
   return (
     <main className="container-lobby">
       <Nickname />
-      <div>
+      <div className="">
         <section className="lobby">
           <button onClick={leaveLobby}>Leave Lobby</button>
           <button onClick={startGame}>Start Game</button>
@@ -59,7 +57,7 @@ const Lobby = () => {
                   <button 
                     className={player.ready ? "ready active" : "ready"} 
                     onClick={setReady}>
-                        Ready
+                      Ready
                   </button>
                 </div>
               )

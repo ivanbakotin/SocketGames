@@ -3,6 +3,9 @@ const crypto = require("crypto");
 
 module.exports = function (socket, io) {
 
+  const token = crypto.randomBytes(4).toString('hex');
+  socket.nickname = "Player" + token;
+  
   socket.on("set-nickname", (nickname, id) => {
     socket.nickname = nickname;
     if (id) global.getUsers(io, id);
@@ -15,7 +18,6 @@ module.exports = function (socket, io) {
 
   socket.on("join-room", id => {
     socket.ready = false;
-    socket.counter = 0;
     socket.join(id);
     global.getUsers(io, id);
   })
@@ -39,6 +41,4 @@ module.exports = function (socket, io) {
     socket.leave(id);
     global.getUsers(io, id);
   })
-
-  socket.on('drawing', (data) => io.sockets.in(data.id).emit('drawing', data));
 }

@@ -4,7 +4,6 @@ const http = require("http");
 const port = process.env.PORT || 8000;
 const app = express();
 const server = http.createServer(app);
-const crypto = require("crypto");
 
 const io = require("socket.io")(server, {
 	cors: {
@@ -14,17 +13,13 @@ const io = require("socket.io")(server, {
 })
 
 io.on("connection", socket => {
-
-  const token = crypto.randomBytes(4).toString('hex');
-  socket.nickname = "Player" + token;
-
   require('./socket/global.js')(socket, io);
-
+  require('./socket/lobbychat.js')(socket, io);
+  require('./socket/gameDrawing.js')(socket, io);
 })
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
 //remove player from lobby as host
-//declare host
-//dont display button
-// maybe game list then game
+//declare host maybe
+//dont display button ready

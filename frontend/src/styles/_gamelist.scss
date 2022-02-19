@@ -1,0 +1,20 @@
+.gamelist {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: clamp(3rem, 3vw, 5rem);
+  color: white;
+  gap: 3rem;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-radius: 1rem;
+  margin: 3rem;
+
+  .game { 
+    &:first-of-type {
+      margin-top: 3rem;
+    }
+  }
+}

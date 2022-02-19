@@ -1,7 +1,8 @@
-import { gameList } from "../utils/variables"
-import { useNavigate } from "react-router-dom"
-import { SocketContext } from "../context/socket"
+import { gameList } from "../utils/variables";
+import { useNavigate } from "react-router-dom";
+import { SocketContext } from "../context/socket";
 import { useContext } from "react";
+import Header from "./Header.js";
 
 const GameList = () => {
 
@@ -10,12 +11,15 @@ const GameList = () => {
 
   function goToLobby(e) {
     socket.emit("get-link");
-      socket.on('send-link', id => {
-        navigate(`/lobby/${e.target.name}/${id}`);
-      });
+
+    socket.on('send-link', id => {
+      navigate(`/lobby/${e.target.getAttribute("name")}/${id}`);
+    });
   }
 
   return (
+    <>
+    <Header />
     <section className="gamelist">
       <h1>Choose a game to play!</h1>
       {gameList.map(game => {
@@ -25,11 +29,12 @@ const GameList = () => {
             onClick={goToLobby} 
             name={game.name} 
             className="game">
-            {game.name}
+            {game.display}
           </div>
         )
       })}
     </section>
+    </>
   )
 }
 

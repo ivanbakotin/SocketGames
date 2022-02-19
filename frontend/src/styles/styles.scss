@@ -1,8 +1,8 @@
 @import "./header";
-@import "./menu";
 @import "./_nickname.scss";
 @import "./_lobby.scss";
 @import "./game";
+@import "./gamelist";
 
 body {
   overscroll-behavior: contain;
