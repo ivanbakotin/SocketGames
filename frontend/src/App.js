@@ -1,7 +1,7 @@
 import { SocketContext, socket } from './context/socket';
 import {BrowserRouter, Routes, Route } from "react-router-dom"
 import Game from "./components/Game"
-import Lobby from "./components/Lobby"
+import Lobby from "./pages/Lobby"
 import GameList from './components/GameList';
 
 function App() {

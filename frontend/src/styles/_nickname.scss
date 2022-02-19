@@ -1,24 +1,30 @@
-.container-nickname {
+.nickname-form {
     display: flex;
-    justify-content: flex-start;
-    padding: 2rem;
+    flex-direction: column;
+    align-self: center;
+    align-items: flex-start;
+    font-size: $text-font-size;
+    background-color: rgb(66, 64, 64);
+    padding: 1rem;
+    margin: 3rem;
+    border-radius: 2rem;
 
-    .nickname-form {
-        font-size: clamp(2rem, 2vw, 3rem);
-        background-color: rgb(66, 64, 64);
-        padding: 2.5rem;
-        border-radius: 2rem;
+    * {
+        margin: 0.5rem 1rem;
+    }
 
-        * {
-            margin: 0.5rem 1rem;
-        }
+    input {
+      outline: none;
+      border: none;
+      border-bottom: 2px black solid;
+      border-radius: 1rem;
+    }
+
+    label {
+        color: white;
+    }
     
-        label {
-            color: white;
-        }
-
-        button {
-            padding: 0.1rem;
-        }
+    button {
+        padding: 0.1rem;
     }
 }

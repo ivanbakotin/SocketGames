@@ -4,13 +4,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: clamp(3rem, 3vw, 5rem);
+  font-size: $text-font-size-large;
   color: white;
   gap: 3rem;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-radius: 1rem;
   margin: 3rem;
+  text-align: center;
 
   .game { 
     &:first-of-type {

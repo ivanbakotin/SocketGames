@@ -4,44 +4,15 @@
 }
 
 .header h1 {
-  font-size: clamp(2rem, 3vw, 4rem);
+  font-size: clamp(3rem, 3vw, 5rem);
   padding: 4%;
 }
 
 .header h2 {
-  font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+  font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
-.container-nickname {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding: 2rem;
-}
-
-.container-nickname .nickname-form {
-  font-size: clamp(2rem, 2vw, 3rem);
-  background-color: #424040;
-  padding: 2.5rem;
-  border-radius: 2rem;
-}
-
-.container-nickname .nickname-form * {
-  margin: 0.5rem 1rem;
-}
-
-.container-nickname .nickname-form label {
-  color: white;
-}
-
-.container-nickname .nickname-form button {
-  padding: 0.1rem;
-}
-
-.container-lobby {
+.nickname-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,42 +20,87 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  background-color: #424040;
+  padding: 1rem;
+  margin: 3rem;
+  border-radius: 2rem;
 }
 
-.container-lobby .lobby {
-  margin: 0 2rem;
-  padding: 2.5rem;
+.nickname-form * {
+  margin: 0.5rem 1rem;
+}
+
+.nickname-form input {
+  outline: none;
+  border: none;
+  border-bottom: 2px black solid;
+  border-radius: 1rem;
+}
+
+.nickname-form label {
+  color: white;
+}
+
+.nickname-form button {
+  padding: 0.1rem;
+}
+
+.lobby {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.lobby .lobby-chat {
+  margin: 2rem;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+.lobby .lobby-players {
+  margin: 2rem;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
   border-radius: 2rem;
   background-color: #494848;
-  font-size: clamp(2rem, 2vw, 3rem);
+  font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
-.container-lobby .lobby button {
+.lobby .lobby-players button {
   margin-bottom: 1rem;
   margin-right: 1rem;
 }
 
-.container-lobby .lobby .player-list .player {
+.lobby .lobby-players .player-list .player {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.container-lobby .lobby .player-list .player p {
-  font-size: clamp(1rem, 1.5vw, 2rem);
+.lobby .lobby-players .player-list .player p {
+  font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
   margin-right: 2rem;
+  overflow: auto;
 }
 
-.container-lobby .lobby .player-list .player .ready {
-  font-size: clamp(1rem, 1.5vw, 2rem);
+.lobby .lobby-players .player-list .player .ready {
+  font-size: clamp(1.5rem, 2vw, 3rem);
   background-color: #a13232;
 }
 
-.container-lobby .lobby .player-list .player .active {
+.lobby .lobby-players .player-list .player .active {
   background-color: #48a165;
 }
 
@@ -153,6 +169,7 @@
   border-bottom: 1px solid white;
   border-radius: 1rem;
   margin: 3rem;
+  text-align: center;
 }
 
 .gamelist .game:first-of-type {

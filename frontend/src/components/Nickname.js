@@ -20,13 +20,13 @@ const Nickname = () => {
   }
 
   return (
-    <section className="container-nickname">
+
       <form className="nickname-form" onSubmit={updateNickname}>
         <label htmlFor="nickname">Nickname:</label>
         <input onChange={handleInput} type="text" id="nickname" name="nickname"></input>
-        <button type="submit">SEND</button>
+        <button type="submit">SET</button>
       </form>
-    </section>
+
   )
 }
 

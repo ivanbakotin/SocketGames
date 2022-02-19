@@ -1,37 +1,45 @@
-.container-lobby {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.lobby {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-    .lobby {
-        margin: 0 2rem;
-        padding: 2.5rem;
-        border-radius: 2rem;
-        background-color: rgb(73, 72, 72);
-        font-size: clamp(2rem, 2vw, 3rem);
+  .lobby-chat {
+    margin: 2rem;
+    flex-basis: 40%;
+  }
 
-        button {
-            margin-bottom: 1rem;
-            margin-right: 1rem;
-        }
+  .lobby-players {
+    margin: 2rem;
+    flex-basis: 40%;
+    border-radius: 2rem;
+    background-color: rgb(73, 72, 72);
+    font-size: $text-font-size;
 
-        .player-list {
-            .player {
-                display: flex;
-                p {
-                    font-size: clamp(1rem, 1.5vw, 2rem);
-                    color: white;
-                    margin-right: 2rem;
-                }
-                .ready {
-                    font-size: clamp(1rem, 1.5vw, 2rem);
-                    background-color: rgb(161, 50, 50);
-                }
-
-                .active {
-                    background-color: rgb(72, 161, 101);
-                }
-            }
-        }
+    button {
+        margin-bottom: 1rem;
+        margin-right: 1rem;
     }
+
+    .player-list {       
+      .player {
+        display: flex;
+
+        p {
+          font-size: $text-font-size-small;
+          color: white;
+          margin-right: 2rem;
+          overflow: auto;
+        }
+
+        .ready {
+          font-size: $text-font-size-small;
+          background-color: rgb(161, 50, 50);
+        }
+
+        .active {
+          background-color: rgb(72, 161, 101);
+        }
+      }
+    }
+  }
 }
