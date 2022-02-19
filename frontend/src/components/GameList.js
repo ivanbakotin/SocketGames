@@ -2,7 +2,6 @@ import { gameList } from "../utils/variables";
 import { useNavigate } from "react-router-dom";
 import { SocketContext } from "../context/socket";
 import { useContext } from "react";
-import Header from "./Header.js";
 
 const GameList = () => {
 
@@ -18,8 +17,6 @@ const GameList = () => {
   }
 
   return (
-    <>
-    <Header />
     <section className="gamelist">
       <h1>Choose a game to play!</h1>
       {gameList.map(game => {
@@ -34,7 +31,6 @@ const GameList = () => {
         )
       })}
     </section>
-    </>
   )
 }
 

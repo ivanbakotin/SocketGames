@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import GameTyping from "./GameTyping"
-import GameDrawing from "./GameDrawing"
+import GameTyping from "../components/GameTyping"
+import GameDrawing from "../components/GameDrawing"
 
 const Game = () => {
   const { type } = useParams();
