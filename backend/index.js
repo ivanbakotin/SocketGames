@@ -23,3 +23,4 @@ server.listen(port, () => console.log(`Listening on port ${port}`));
 //remove player from lobby as host
 //declare host maybe
 //dont display button ready
+//forbid taken nickname in group

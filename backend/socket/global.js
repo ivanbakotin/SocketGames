@@ -5,10 +5,11 @@ module.exports = function (socket, io) {
 
   const token = crypto.randomBytes(4).toString('hex');
   socket.nickname = "Player" + token;
+  socket.emit("get-user-data", { nickname: socket.nickname, id: socket.id })
   
   socket.on("set-nickname", (nickname, id) => {
     socket.nickname = nickname;
-    if (id) global.getUsers(io, id);
+    global.getUsers(io, id);
   })
 
   socket.on('get-link', () => {
@@ -16,9 +17,14 @@ module.exports = function (socket, io) {
     socket.emit("send-link", id);
   })
 
-  socket.on("join-room", id => {
+  socket.on("join-lobby", id => {
     socket.ready = false;
     socket.join(id);
+    global.getUsers(io, id);
+  })
+
+  socket.on("leave-lobby", id => {
+    socket.leave(id);
     global.getUsers(io, id);
   })
 
@@ -35,10 +41,5 @@ module.exports = function (socket, io) {
     if (global.checkReady(io, id)) {
       io.sockets.in(id).emit('navigate-game');
     }
-  })
-
-  socket.on("leave-lobby", id => {
-    socket.leave(id);
-    global.getUsers(io, id);
   })
 }

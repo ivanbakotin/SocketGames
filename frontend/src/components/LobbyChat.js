@@ -10,8 +10,12 @@ const LobbyChat = () => {
   const [ message, setMessage ] = useState("");
 
   useEffect(() => {
+
+    const messageScroll = document.getElementsByClassName("messages")[0];
+    
     socket.on("receive-message", data => {
       setMessages(prev => [ ...prev, data ])
+      messageScroll.scrollTop = messageScroll.scrollHeight;
     })
 
     return () => {
@@ -19,8 +23,12 @@ const LobbyChat = () => {
     }
   }, [])
 
-  function sendMessage() {
-    socket.emit("send-message", message, id);
+  function sendMessage(e) {
+    e.preventDefault();
+    if (message) {
+      socket.emit("send-message", message, id);
+    }
+    e.target.firstChild.value = "";
     setMessage("");
   }
 
@@ -30,15 +38,27 @@ const LobbyChat = () => {
 
   return (
     <section className="lobby-chat">
+      <h2 className="chat-header">Lobby Chat</h2>
       <div className="messages">
-      {messages.map(message => {
+      {messages.map((message, index) => {
         return (
-          <div className="message">
-            {message.message}
+          <> 
+          {message.id == socket.id ? 
+          <div key={index} className="message right">
+            <p>{message.nickname}</p>
+            <p>{message.message}</p>
           </div>
-        )
-      })}
+
+          :
+
+          <div key={index} className="message">
+            <p>{message.nickname}</p>
+            <p>{message.message}</p>
+          </div>}
+          </>
+        )})}
       </div>
+
       <form onSubmit={sendMessage}>
         <input onChange={handleInput} type="text" placeholder="Message"/>
         <button type="submit">SEND</button>

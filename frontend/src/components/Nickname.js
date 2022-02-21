@@ -20,13 +20,11 @@ const Nickname = () => {
   }
 
   return (
-
-      <form className="nickname-form" onSubmit={updateNickname}>
-        <label htmlFor="nickname">Nickname:</label>
-        <input onChange={handleInput} type="text" id="nickname" name="nickname"></input>
-        <button type="submit">SET</button>
-      </form>
-
+    <form className="nickname-form" onSubmit={updateNickname}>
+      <label htmlFor="nickname">Nickname:</label>
+      <input onChange={handleInput} type="text" id="nickname" name="nickname"></input>
+      <button type="submit">SET</button>
+    </form>
   )
 }
 
