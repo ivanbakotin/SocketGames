@@ -1,5 +1,6 @@
 import LobbyPlayers from "../components/LobbyPlayers";
 import LobbyChat from "../components/LobbyChat";
+import LobbyInfo from "../components/LobbyInfo";
 import Nickname from "../components/Nickname";
 
 const Lobby = () => {
@@ -7,7 +8,10 @@ const Lobby = () => {
     <>
       <Nickname />
       <article className="lobby">
-        <LobbyPlayers />
+        <div className="lobby-left">
+          <LobbyPlayers />
+          <LobbyInfo />
+        </div>
         <LobbyChat />
       </article>
     </>

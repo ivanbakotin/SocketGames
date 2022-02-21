@@ -42,25 +42,15 @@ const LobbyChat = () => {
       <div className="messages">
       {messages.map((message, index) => {
         return (
-          <> 
-          {message.id == socket.id ? 
-          <div key={index} className="message right">
-            <p>{message.nickname}</p>
+          <div key={index} className={message.id == socket.id ? "message right" : "message"}>
+            <p>{message.nickname}:</p>
             <p>{message.message}</p>
           </div>
-
-          :
-
-          <div key={index} className="message">
-            <p>{message.nickname}</p>
-            <p>{message.message}</p>
-          </div>}
-          </>
         )})}
       </div>
 
       <form onSubmit={sendMessage}>
-        <input onChange={handleInput} type="text" placeholder="Message"/>
+        <input autocomplete="off" onChange={handleInput} type="text" placeholder="Message"/>
         <button type="submit">SEND</button>
       </form>
     </section>

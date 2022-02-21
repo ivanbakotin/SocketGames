@@ -41,6 +41,7 @@ const LobbyPlayers = () => {
 
   return (
     <section className="lobby-players">
+      <h2 className="lobby-players-header">Game Lobby</h2>
       <button onClick={leaveLobby}>Leave Lobby</button>
       <button onClick={startGame}>Start Game</button>
 
@@ -51,7 +52,7 @@ const LobbyPlayers = () => {
               <p className="nickname">{player.nickname}</p>
               <button 
                 className={player.ready ? "ready active" : "ready"} 
-                onClick={setReady}>
+                onClick={socket.id == player.id ? setReady : null}>
                   Ready
               </button>
             </div>

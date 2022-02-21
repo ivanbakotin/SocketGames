@@ -1,0 +1,48 @@
+.lobby-chat {
+  margin: 2rem;
+
+  .chat-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: #494848;
+    color: white;
+    font-size: $text-font-size-medium;
+    border-bottom: white 1px solid;
+  }
+
+  .messages {
+    height: 30rem;
+    background-color: rgb(124, 124, 124);
+    overflow-y: auto;
+
+    .message {
+      border-radius: 1rem;
+      background-color: rgb(76, 95, 82);
+      font-size: $text-font-size-medium;
+      color: white;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      max-width: clamp(15rem, 10vw, 20rem);
+      word-wrap: break-word;
+      line-height: 1.2;
+    }
+
+    .right {
+      margin-left: auto;
+      background-color: rgb(72, 161, 101);
+    }
+  }
+
+  form {
+    input {
+      font-size: $text-font-size-small;
+      outline: none;
+      border: none;
+      border-bottom: black 1px solid;
+    }
+
+    button {
+      font-size: $text-font-size-small;
+    }
+  }  
+}

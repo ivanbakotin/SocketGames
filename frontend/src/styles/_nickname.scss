@@ -3,7 +3,6 @@
     flex-direction: column;
     align-self: center;
     align-items: flex-start;
-    font-size: $text-font-size-medium;
     background-color: rgb(66, 64, 64);
     padding: 1rem;
     margin: 3rem;
@@ -14,6 +13,7 @@
     }
 
     input {
+      font-size: $text-font-size-small;
       outline: none;
       border: none;
       border-bottom: 2px black solid;
@@ -22,10 +22,12 @@
     }
 
     label {
+        font-size: $text-font-size-small;
         color: white;
     }
     
     button {
+        font-size: $text-font-size-small;
         padding: 0.1rem;
     }
 }

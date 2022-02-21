@@ -1,0 +1,21 @@
+.lobby-info {
+  background-color: $background-color-light;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .lobby-info-header {
+    color: white;
+    font-size: $text-font-size-medium;
+    border-bottom: 1px solid white;
+  }
+
+  .lobby-game-info {
+    color: white;
+    font-size: $text-font-size-small;
+    word-wrap: break-word;
+    line-height: 1.5;
+  }
+}

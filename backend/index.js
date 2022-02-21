@@ -24,3 +24,6 @@ server.listen(port, () => console.log(`Listening on port ${port}`));
 //declare host maybe
 //dont display button ready
 //forbid taken nickname in group
+// add mute
+// accept player in lobby
+// add copy url

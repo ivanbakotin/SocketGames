@@ -1,0 +1,41 @@
+.lobby-players {
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  background-color: rgb(73, 72, 72);
+  font-size: $text-font-size-medium;
+
+  .lobby-players-header {
+    color: white;
+    border-bottom: 1px solid white;
+    font-size: $text-font-size-medium;
+  }
+
+  button {
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+  }
+
+  .player-list {       
+    .player {
+      display: flex;
+      flex-wrap: wrap;
+
+      p {
+        font-size: $text-font-size-small;
+        color: white;
+        margin-right: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .ready {
+        font-size: $text-font-size-small;
+        background-color: rgb(161, 50, 50);
+      }
+
+      .active {
+        background-color: rgb(72, 161, 101);
+      }
+    }
+  }
+}

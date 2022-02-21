@@ -25,7 +25,6 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
   background-color: #424040;
   padding: 1rem;
   margin: 3rem;
@@ -37,6 +36,7 @@
 }
 
 .nickname-form input {
+  font-size: clamp(1.5rem, 2vw, 3rem);
   outline: none;
   border: none;
   border-bottom: 2px black solid;
@@ -45,10 +45,12 @@
 }
 
 .nickname-form label {
+  font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
 }
 
 .nickname-form button {
+  font-size: clamp(1.5rem, 2vw, 3rem);
   padding: 0.1rem;
 }
 
@@ -66,29 +68,63 @@
           justify-content: space-evenly;
 }
 
-.lobby .lobby-chat {
+.lobby .lobby-left {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.lobby-players {
+  padding: 1rem;
   margin: 2rem;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  border-radius: 2rem;
+  background-color: #494848;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
 }
 
-.lobby .lobby-chat .chat-header {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  background-color: #494848;
-  width: 100%;
+.lobby-players .lobby-players-header {
   color: white;
+  border-bottom: 1px solid white;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
-  border-bottom: white 1px solid;
 }
 
-.lobby .lobby-chat .messages {
-  height: 30rem;
-  width: 100%;
+.lobby-players button {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.lobby-players .player-list .player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.lobby-players .player-list .player p {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  color: white;
+  margin-right: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.lobby-players .player-list .player .ready {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  background-color: #a13232;
+}
+
+.lobby-players .player-list .player .active {
+  background-color: #48a165;
+}
+
+.lobby-info {
   background-color: #494848;
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
-  overflow-y: auto;
-  word-break: break-all;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,66 +134,64 @@
           flex-direction: column;
 }
 
-.lobby .lobby-chat .messages .message {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin: 0.5rem;
-  border-radius: 1rem;
-  background-color: #829287;
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
+.lobby-info .lobby-info-header {
   color: white;
-  padding: 0.5rem;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  border-bottom: 1px solid white;
 }
 
-.lobby .lobby-chat .messages .right {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  background-color: #48a165;
-}
-
-.lobby .lobby-chat form input {
+.lobby-info .lobby-game-info {
+  color: white;
   font-size: clamp(1.5rem, 2vw, 3rem);
+  word-wrap: break-word;
+  line-height: 1.5;
 }
 
-.lobby .lobby-chat form button {
-  font-size: clamp(1.5rem, 2vw, 3rem);
-}
-
-.lobby .lobby-players {
-  padding: 1rem;
+.lobby-chat {
   margin: 2rem;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
-  border-radius: 2rem;
+}
+
+.lobby-chat .chat-header {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   background-color: #494848;
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
-}
-
-.lobby .lobby-players button {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-}
-
-.lobby .lobby-players .player-list .player {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.lobby .lobby-players .player-list .player p {
-  font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
-  margin-right: 2rem;
-  overflow: auto;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  border-bottom: white 1px solid;
 }
 
-.lobby .lobby-players .player-list .player .ready {
-  font-size: clamp(1.5rem, 2vw, 3rem);
-  background-color: #a13232;
+.lobby-chat .messages {
+  height: 30rem;
+  background-color: #7c7c7c;
+  overflow-y: auto;
 }
 
-.lobby .lobby-players .player-list .player .active {
+.lobby-chat .messages .message {
+  border-radius: 1rem;
+  background-color: #4c5f52;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  max-width: clamp(15rem, 10vw, 20rem);
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+.lobby-chat .messages .right {
+  margin-left: auto;
   background-color: #48a165;
+}
+
+.lobby-chat form input {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  outline: none;
+  border: none;
+  border-bottom: black 1px solid;
+}
+
+.lobby-chat form button {
+  font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 .whiteboard {
