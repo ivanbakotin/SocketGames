@@ -3,12 +3,17 @@ function getUsers(io, id) {
   const clients = io.sockets.adapter.rooms.get(id);
 
   if (clients) {
-
+    
     const users = [];
   
     for (const clientId of clients ) {
       const clientSocket = io.sockets.sockets.get(clientId);
-      users.push({ id: clientId, nickname: clientSocket.nickname, ready: clientSocket.ready });
+
+      users.push({ 
+        id: clientId, 
+        nickname: clientSocket.nickname, 
+        lobby: clientSocket.lobby,
+      });
     }
       
     io.sockets.in(id).emit('get-users', users);

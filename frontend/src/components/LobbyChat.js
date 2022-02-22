@@ -50,7 +50,7 @@ const LobbyChat = () => {
       </div>
 
       <form onSubmit={sendMessage}>
-        <input autocomplete="off" onChange={handleInput} type="text" placeholder="Message"/>
+        <input autoComplete="off" onChange={handleInput} type="text" placeholder="Message"/>
         <button type="submit">SEND</button>
       </form>
     </section>

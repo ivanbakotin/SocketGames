@@ -22,7 +22,7 @@ const Nickname = () => {
   return (
     <form className="nickname-form" onSubmit={updateNickname}>
       <label htmlFor="nickname">Nickname:</label>
-      <input autocomplete="off" onChange={handleInput} type="text" id="nickname" name="nickname"></input>
+      <input autoComplete="off" onChange={handleInput} type="text" id="nickname" name="nickname"></input>
       <button type="submit">SET</button>
     </form>
   )

@@ -10,7 +10,7 @@ const LobbyPlayers = () => {
   const [ players, setPlayers ] = useState([])
   
   useEffect(() => {
-    socket.emit("join-lobby", id)
+    socket.emit("send-users", id)
 
     socket.on('get-users', users => {
       setPlayers(users);
@@ -39,6 +39,14 @@ const LobbyPlayers = () => {
     socket.emit("start-game", id);
   }
 
+  function setMute(e) {
+    socket.emit("set-mute", e.target.name, id);
+  }
+
+  function kickPlayer(e) {
+    socket.emit("kick-player", e.target.name, id);
+  }
+
   return (
     <section className="lobby-players">
       <h2 className="lobby-players-header">Game Lobby</h2>
@@ -47,14 +55,20 @@ const LobbyPlayers = () => {
 
       <div className="player-list">
         {players.map(player => {
+          console.log(player)
           return (
-            <div className="player" key={player.id}>
+            <div className="player" key={player.lobby.id}>
               <p className="nickname">{player.nickname}</p>
               <button 
-                className={player.ready ? "ready active" : "ready"} 
+                className={player.lobby.ready ? "ready active" : "ready"} 
                 onClick={socket.id == player.id ? setReady : null}>
                   Ready
               </button>
+              {(!player?.lobby?.host && (socket.id != player.lobby.id)) && 
+              <>
+              <button name={player.lobby.id} onClick={setMute}>Mute</button>
+              <button name={player.lobby.id} onClick={kickPlayer}>Kick</button>
+              </>}
             </div>
           )
         })}

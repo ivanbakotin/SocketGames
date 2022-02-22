@@ -10,7 +10,7 @@ const LobbyInfo = () => {
 
   useEffect(() => {
     setInfo(gameList.find(game => game.name === type))
-  }, [])
+  }, [type])
   
   return (
     <section className="lobby-info">

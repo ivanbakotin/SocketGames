@@ -9,7 +9,7 @@ const GameList = () => {
   const navigate = useNavigate();
 
   function goToLobby(e) {
-    socket.emit("get-link");
+    socket.emit("setup-lobby");
 
     socket.on('send-link', id => {
       navigate(`/lobby/${e.target.getAttribute("name")}/${id}`);
