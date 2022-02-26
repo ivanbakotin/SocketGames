@@ -25,7 +25,7 @@ function checkReady(io, id) {
   
   for (const clientId of clients ) {
     const clientSocket = io.sockets.sockets.get(clientId);
-    if (!clientSocket.ready) {
+    if (!clientSocket.lobby.ready) {
       return false;
     }
   }
@@ -33,4 +33,22 @@ function checkReady(io, id) {
   return true;
 }
 
-module.exports = { getUsers, checkReady };
+function checkLobbyExists(io, id) {
+  const rooms = io.sockets.adapter.rooms;
+
+  for (const [key, value] of Object.entries(rooms)) {
+    if (key == id) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function checkIfHost(socket, id) {
+  //check id room == host room
+  return socket?.lobby?.host;
+}
+
+
+module.exports = { getUsers, checkReady, checkLobbyExists, checkIfHost };

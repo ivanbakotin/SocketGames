@@ -1,0 +1,22 @@
+.lobby-requests {
+  background-color: $background-color-light;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .lobby-requests-header {
+    font-size: $text-font-size-medium;
+    color: white;
+    border-bottom: white solid 1px;
+    margin-bottom: 1rem;
+  }
+
+  .request {
+    color: white;
+    font-size: $text-font-size-small;
+    display: flex;
+    gap: 1rem;
+  }
+}

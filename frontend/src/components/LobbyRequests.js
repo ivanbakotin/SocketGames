@@ -21,18 +21,28 @@ const LobbyRequests = () => {
   function acceptRequest(e) {
     socket.emit("accept-request", e.target.name, id);
   }
+
+  function declineRequest(e) {
+
+  }
   
   return (
     <section className="lobby-requests">
-      {players.map(player => {
+      <h2 className="lobby-requests-header">Player Requests</h2>
+      {players.length ? players.map(player => {
         return (
-          <div>
+          <div className="request" key={player.id}>
             <div>{player.nickname}</div>
             <button name={player.id} onClick={acceptRequest}>Accept</button>
-            <button>Decline</button>
+            <button name={player.id} onClick={declineRequest}>Decline</button>
           </div>
         )
-      })}
+      })
+
+      :
+
+      <div className="request">No requests</div>
+    }
     </section>
   )
 }

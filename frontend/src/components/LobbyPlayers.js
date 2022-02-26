@@ -20,9 +20,14 @@ const LobbyPlayers = () => {
       navigate(`/game/${type}/${id}`);
     })
 
+    socket.on('kicked', () => {
+      navigate(`/`);
+    })
+
     return () => {
       socket.off('get-users');
       socket.off('navigate-game');
+      socket.off("kicked");
     }
   }, [type])
 
@@ -49,7 +54,9 @@ const LobbyPlayers = () => {
 
   return (
     <section className="lobby-players">
+      
       <h2 className="lobby-players-header">Game Lobby</h2>
+
       <button onClick={leaveLobby}>Leave Lobby</button>
       <button onClick={startGame}>Start Game</button>
 
@@ -58,17 +65,32 @@ const LobbyPlayers = () => {
           console.log(player)
           return (
             <div className="player" key={player.lobby.id}>
+
               <p className="nickname">{player.nickname}</p>
+              
               <button 
                 className={player.lobby.ready ? "ready active" : "ready"} 
-                onClick={socket.id == player.id ? setReady : null}>
+                onClick={socket.id == player.lobby.id ? setReady : null}>
                   Ready
               </button>
-              {(!player?.lobby?.host && (socket.id != player.lobby.id)) && 
+
+              {(!player?.lobby?.host && (socket.id != player.lobby.id)) &&  // get user socket
               <>
-              <button name={player.lobby.id} onClick={setMute}>Mute</button>
-              <button name={player.lobby.id} onClick={kickPlayer}>Kick</button>
+              <button 
+                className={player.lobby.mute ? "mute active" : "mute"}
+                name={player.lobby.id} 
+                onClick={setMute}>
+                Mute
+              </button>
+
+              <button 
+                className="kick"
+                name={player.lobby.id} 
+                onClick={kickPlayer}>
+                Kick
+              </button>
               </>}
+
             </div>
           )
         })}

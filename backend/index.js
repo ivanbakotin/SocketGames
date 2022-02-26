@@ -16,12 +16,11 @@ io.on("connection", socket => {
   require('./socket/global.js')(socket, io);
   require('./socket/lobbyplayers.js')(socket, io);
   require('./socket/lobbychat.js')(socket, io);
+  require('./socket/lobbywaiting.js')(socket, io);
   require('./socket/gameDrawing.js')(socket, io);
 })
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
-//remove player from lobby as host
-//accept player in lobby
 //add copy url
 //forbid taken nickname in group

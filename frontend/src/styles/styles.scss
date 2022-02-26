@@ -1,12 +1,14 @@
-@import "./variables";
-@import "./header";
+@import "./_variables";
+@import "./_header";
 @import "./_nickname.scss";
 @import "./_lobby.scss";
 @import "./_lobbyplayers.scss";
 @import "./_lobbyinfo.scss";
 @import "./_lobbychat.scss";
-@import "./game";
-@import "./gamelist";
+@import "./_lobbyrequests";
+@import "./_lobbywaiting";
+@import "./_game";
+@import "./_gamelist";
 
 body {
   overscroll-behavior: contain;

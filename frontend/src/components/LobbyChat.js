@@ -21,13 +21,14 @@ const LobbyChat = () => {
     return () => {
       socket.off("receive-message");
     }
+
   }, [])
 
   function sendMessage(e) {
     e.preventDefault();
-    if (message) {
-      socket.emit("send-message", message, id);
-    }
+
+    if (message) socket.emit("send-message", message, id);
+
     e.target.firstChild.value = "";
     setMessage("");
   }
@@ -38,7 +39,9 @@ const LobbyChat = () => {
 
   return (
     <section className="lobby-chat">
+
       <h2 className="chat-header">Lobby Chat</h2>
+
       <div className="messages">
       {messages.map((message, index) => {
         return (
@@ -50,9 +53,14 @@ const LobbyChat = () => {
       </div>
 
       <form onSubmit={sendMessage}>
-        <input autoComplete="off" onChange={handleInput} type="text" placeholder="Message"/>
+        <input 
+          autoComplete="off" 
+          onChange={handleInput} 
+          type="text" 
+          placeholder="Message"/>
         <button type="submit">SEND</button>
       </form>
+
     </section>
   )
 }

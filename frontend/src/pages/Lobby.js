@@ -16,7 +16,6 @@ const Lobby = () => {
   const [ user, setUser ] = useState("");
 
   useEffect(() => {
-    console.log(id)
     socket.emit("get-user", id);
 
     socket.on("receive-user", data => {
