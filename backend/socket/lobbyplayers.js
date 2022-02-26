@@ -24,21 +24,26 @@ module.exports = function (socket, io) {
   })
 
   socket.on("leave-lobby", id => {
-    //check if host in room exists if not assign one
+    //check if host if yes assign one
+    if (global.checkIfHost(socket, id)) {
+
+    }
+
     socket.lobby = { 
       room: null,
       id: socket.id,
-      host: true, 
-      accepted: true,
+      host: false, 
+      accepted: false,
       mute: false,
       ready: false,
     };
+
     socket.leave(id);
     global.getUsers(io, id);
   })
 
   socket.on("kick-player", (player_id, id) => {
-    if (global.checkIfHost(socket)) {
+    if (global.checkIfHost(socket, id)) {
       const player_socket = io.sockets.sockets.get(player_id);
   
       player_socket.leave(id);
@@ -59,7 +64,7 @@ module.exports = function (socket, io) {
   })
 
   socket.on("set-mute", (player_id, id) => {
-    if (global.checkIfHost(socket)) {
+    if (global.checkIfHost(socket, id)) {
       const player_socket = io.sockets.sockets.get(player_id);
       player_socket.lobby.mute = !player_socket.lobby.mute;
       global.getUsers(io, id);

@@ -1,0 +1,10 @@
+.lobby-waiting {
+  background-color: $background-color-light;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: $text-font-size-medium;
+  color: white;
+}

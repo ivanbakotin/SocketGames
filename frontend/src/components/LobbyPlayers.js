@@ -8,9 +8,15 @@ const LobbyPlayers = () => {
   const { id, type } = useParams();
   const navigate = useNavigate();
   const [ players, setPlayers ] = useState([])
+  const [ user, setUser ] = useState({})
   
   useEffect(() => {
-    socket.emit("send-users", id)
+    socket.emit("send-users", id);
+    socket.emit("get-user");
+
+    socket.on("receive-user", data => {
+      setUser(data);
+    })
 
     socket.on('get-users', users => {
       setPlayers(users);
@@ -28,6 +34,7 @@ const LobbyPlayers = () => {
       socket.off('get-users');
       socket.off('navigate-game');
       socket.off("kicked");
+      socket.off("receive-user");
     }
   }, [type])
 
@@ -62,7 +69,6 @@ const LobbyPlayers = () => {
 
       <div className="player-list">
         {players.map(player => {
-          console.log(player)
           return (
             <div className="player" key={player.lobby.id}>
 
@@ -74,7 +80,7 @@ const LobbyPlayers = () => {
                   Ready
               </button>
 
-              {(!player?.lobby?.host && (socket.id != player.lobby.id)) &&  // get user socket
+              {user?.host && user.id != player.lobby.id &&
               <>
               <button 
                 className={player.lobby.mute ? "mute active" : "mute"}

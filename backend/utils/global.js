@@ -15,7 +15,7 @@ function getUsers(io, id) {
         lobby: clientSocket.lobby,
       });
     }
-      
+    
     io.sockets.in(id).emit('get-users', users);
   } 
 }
@@ -46,9 +46,7 @@ function checkLobbyExists(io, id) {
 }
 
 function checkIfHost(socket, id) {
-  //check id room == host room
-  return socket?.lobby?.host;
+  return socket?.lobby?.host && socket?.lobby?.room == id;
 }
-
 
 module.exports = { getUsers, checkReady, checkLobbyExists, checkIfHost };

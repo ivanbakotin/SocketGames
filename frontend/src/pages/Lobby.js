@@ -5,7 +5,6 @@ import Nickname from "../components/Nickname";
 import { SocketContext } from "../context/socket"
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import LobbyWaiting from "../components/LobbyWaiting";
 import LobbyRequests from "../components/LobbyRequests";
 
 const Lobby = () => {
@@ -22,20 +21,16 @@ const Lobby = () => {
       setUser(data)
     })
 
-    socket.on("accepted", data => {
-      setUser(data)
-    })
-
     return () => {
+      socket.emit("leave-lobby", id);
       socket.off("receive-user");
-      socket.off("accepted");
     }
   }, [])
   
   return (
     <>
     <Nickname />
-    {user && user.accepted ?
+    {user && user.accepted &&
     <article className="lobby">
       <div className="lobby-left">
         <LobbyRequests />
@@ -44,10 +39,6 @@ const Lobby = () => {
       </div>
       <LobbyChat />
     </article>
-
-    :
-
-    <LobbyWaiting />
     }
     </>
   )

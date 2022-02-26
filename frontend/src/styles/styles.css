@@ -224,6 +224,22 @@
   gap: 1rem;
 }
 
+.lobby-waiting {
+  background-color: #494848;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+}
+
 .whiteboard {
   height: 100%;
   width: 100%;
