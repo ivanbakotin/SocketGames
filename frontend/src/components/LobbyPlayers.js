@@ -23,7 +23,7 @@ const LobbyPlayers = () => {
     })
 
     socket.on('navigate-game', () => {
-      navigate(`/game/${type}/${id}`);
+      navigate(`/game/${type}/${id}`, { state: { access: true }});
     })
 
     socket.on('kicked', () => {
@@ -59,10 +59,24 @@ const LobbyPlayers = () => {
     socket.emit("kick-player", e.target.name, id);
   }
 
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(`${window.location.host}/waitingroom/${type}/${id}`)
+      console.log("copied")
+    } catch (err) {
+      console.error('Failed to copy!', err)
+    }
+  }
+ 
   return (
     <section className="lobby-players">
       
       <h2 className="lobby-players-header">Game Lobby</h2>
+
+      <div className="lobby-link">
+        <div>{`${window.location.host}/waitingroom/${type}/${id}`}</div>
+        <button onClick={copyLink}>Copy Link</button>
+      </div>
 
       <button onClick={leaveLobby}>Leave Lobby</button>
       <button onClick={startGame}>Start Game</button>
@@ -77,7 +91,7 @@ const LobbyPlayers = () => {
               <button 
                 className={player.lobby.ready ? "ready active" : "ready"} 
                 onClick={socket.id == player.lobby.id ? setReady : null}>
-                  Ready
+                  {player.lobby.ready ? "Ready" : "Not Ready"}
               </button>
 
               {user?.host && user.id != player.lobby.id &&
@@ -86,7 +100,7 @@ const LobbyPlayers = () => {
                 className={player.lobby.mute ? "mute active" : "mute"}
                 name={player.lobby.id} 
                 onClick={setMute}>
-                Mute
+                {player.lobby.mute ? "Muted" : "Not Muted"}
               </button>
 
               <button 

@@ -1,0 +1,51 @@
+.game-rgb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-size: $text-font-size-medium;
+    color: white;
+  }
+
+  .rgb {
+    font-size: $text-font-size-medium;
+    color: white;
+    border-bottom: 1px solid white;
+    margin: 1rem;
+  }
+
+  .players {    
+    margin: 2rem;
+
+    .player {    
+      margin: 1rem;
+      font-size: $text-font-size-small;
+      word-break: break-all;
+      color: white;
+    }
+  }
+
+  .colors-section {
+    text-align: center;
+
+    .color-title {
+      font-size: $text-font-size-small;
+      margin: 3rem;
+      color: white;
+    }
+
+    .colors {
+      display: grid;
+      grid-template-rows: repeat(auto-fill, $text-font-size-large) repeat(auto-fill, $text-font-size-large);
+      grid-template-columns: repeat(auto-fill, $text-font-size-large) repeat(auto-fill, $text-font-size-large) repeat(auto-fill, $text-font-size-large);
+      grid-gap: 3rem;
+      place-content: center;
+  
+      .color {
+        width: $text-font-size-large;
+        height: $text-font-size-large;
+      }
+    }
+  }
+}

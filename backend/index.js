@@ -17,10 +17,12 @@ io.on("connection", socket => {
   require('./socket/lobbyplayers.js')(socket, io);
   require('./socket/lobbychat.js')(socket, io);
   require('./socket/lobbywaiting.js')(socket, io);
-  require('./socket/gameDrawing.js')(socket, io);
+  require('./socket/games/gameDrawing.js')(socket, io);
+  require('./socket/games/gameTyping.js')(socket, io);
+  require('./socket/games/gameRGB.js')(socket, io);
 })
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
-//add copy url
+//fix lobby requests player update
 //forbid taken nickname in group

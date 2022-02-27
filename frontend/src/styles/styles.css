@@ -90,9 +90,27 @@
   font-size: clamp(2rem, 2.5vw, 3.5rem);
 }
 
+.lobby-players .lobby-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lobby-players .lobby-link div {
+  color: white;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  word-break: break-all;
+}
+
+.lobby-players .lobby-link button {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  margin-left: 1rem;
+}
+
 .lobby-players button {
   margin-bottom: 1rem;
   margin-right: 1rem;
+  padding: 0.2rem;
 }
 
 .lobby-players .player-list .player {
@@ -109,6 +127,7 @@
   margin-right: 2rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  word-break: break-all;
 }
 
 .lobby-players .player-list .player button {
@@ -251,36 +270,6 @@
   background-color: white;
 }
 
-.colors {
-  position: fixed;
-}
-
-.color {
-  display: inline-block;
-  height: 48px;
-  width: 48px;
-}
-
-.color.black {
-  background-color: black;
-}
-
-.color.red {
-  background-color: red;
-}
-
-.color.green {
-  background-color: green;
-}
-
-.color.blue {
-  background-color: blue;
-}
-
-.color.yellow {
-  background-color: yellow;
-}
-
 .gamelist {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -310,6 +299,68 @@
 
 .gamelist .game:first-of-type {
   margin-top: 3rem;
+}
+
+.game-rgb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-rgb .title {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+}
+
+.game-rgb .rgb {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+  border-bottom: 1px solid white;
+  margin: 1rem;
+}
+
+.game-rgb .players {
+  margin: 2rem;
+}
+
+.game-rgb .players .player {
+  margin: 1rem;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  word-break: break-all;
+  color: white;
+}
+
+.game-rgb .colors-section {
+  text-align: center;
+}
+
+.game-rgb .colors-section .color-title {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  margin: 3rem;
+  color: white;
+}
+
+.game-rgb .colors-section .colors {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (clamp(3rem, 3vw, 5rem))[auto-fill] (clamp(3rem, 3vw, 5rem))[auto-fill];
+      grid-template-rows: repeat(auto-fill, clamp(3rem, 3vw, 5rem)) repeat(auto-fill, clamp(3rem, 3vw, 5rem));
+  -ms-grid-columns: (clamp(3rem, 3vw, 5rem))[auto-fill] (clamp(3rem, 3vw, 5rem))[auto-fill] (clamp(3rem, 3vw, 5rem))[auto-fill];
+      grid-template-columns: repeat(auto-fill, clamp(3rem, 3vw, 5rem)) repeat(auto-fill, clamp(3rem, 3vw, 5rem)) repeat(auto-fill, clamp(3rem, 3vw, 5rem));
+  grid-gap: 3rem;
+  place-content: center;
+}
+
+.game-rgb .colors-section .colors .color {
+  width: clamp(3rem, 3vw, 5rem);
+  height: clamp(3rem, 3vw, 5rem);
 }
 
 body {
