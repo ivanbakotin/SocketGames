@@ -67,11 +67,11 @@ module.exports = function (socket, io) {
   socket.on("send-answer", (answer, id) => {
     if (answer.red == red && answer.green == green && answer.blue == blue) {
       socket.score++;
-      socket.emit("get-answer")
+      socket.emit("get-answer", true)
       getUsersRGB(io, id)
     } else {
       socket.score--;
-      socket.emit("get-answer")
+      socket.emit("get-answer", false)
       getUsersRGB(io, id)
     }
   })

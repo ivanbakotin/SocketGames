@@ -20,9 +20,8 @@ const Lobby = () => {
     socket.on("receive-user", data => {
       setUser(data)
     })
-
+    //if go back leave lobby
     return () => {
-      socket.emit("leave-lobby", id);
       socket.off("receive-user");
     }
   }, [])
@@ -30,7 +29,7 @@ const Lobby = () => {
   return (
     <>
     <Nickname />
-    {user && user.accepted &&
+    {user?.accepted &&
     <article className="lobby">
       <div className="lobby-left">
         <LobbyRequests />

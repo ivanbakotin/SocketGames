@@ -1,7 +1,7 @@
 import { SocketContext } from "../../context/socket"
 import { useContext, useEffect, useState } from "react";
 
-const GameTyping = () => {
+const GameTicTacToe = () => {
 
   const socket = useContext(SocketContext);
 
@@ -16,4 +16,4 @@ const GameTyping = () => {
   )
 }
 
-export default GameTyping;
+export default GameTicTacToe;

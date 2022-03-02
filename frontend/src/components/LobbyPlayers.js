@@ -62,9 +62,8 @@ const LobbyPlayers = () => {
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(`${window.location.host}/waitingroom/${type}/${id}`)
-      console.log("copied")
-    } catch (err) {
-      console.error('Failed to copy!', err)
+    } catch (error) {
+      console.error(error)
     }
   }
  

@@ -33,7 +33,15 @@ const GameRGB = () => {
       setColors(data)
     })
 
-    socket.on("get-answer", () => {
+    socket.on("get-answer", answer => {
+      if (answer) {
+        const correctDiv = document.querySelector(".correct");
+        correctDiv.innerText = "Correct answer"
+      } else {
+        const correctDiv = document.querySelector(".correct");
+        correctDiv.innerText = "Wrong answer"
+      }
+
       socket.emit("get-rgb-colors");
     })
 
@@ -54,6 +62,7 @@ const GameRGB = () => {
     <article className="game-rgb">
       <h1 className="title">RGB Game</h1>
       <div className="rgb">RGB Value: ({rgb.red}, {rgb.green}, {rgb.blue})</div>
+      <div className="correct"></div>
 
       <section className="colors-section">
         <h2 className="color-title">Guess the color of the rgb value:</h2>

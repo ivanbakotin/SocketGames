@@ -260,7 +260,7 @@
 }
 
 .whiteboard {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   position: absolute;
   left: 0;
@@ -326,6 +326,13 @@
   margin: 1rem;
 }
 
+.game-rgb .correct {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+  border-bottom: 1px solid white;
+  margin: 1rem;
+}
+
 .game-rgb .players {
   margin: 2rem;
 }
@@ -348,17 +355,23 @@
 }
 
 .game-rgb .colors-section .colors {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (clamp(3rem, 3vw, 5rem))[auto-fill] (clamp(3rem, 3vw, 5rem))[auto-fill];
-      grid-template-rows: repeat(auto-fill, clamp(3rem, 3vw, 5rem)) repeat(auto-fill, clamp(3rem, 3vw, 5rem));
-  -ms-grid-columns: (clamp(3rem, 3vw, 5rem))[auto-fill] (clamp(3rem, 3vw, 5rem))[auto-fill] (clamp(3rem, 3vw, 5rem))[auto-fill];
-      grid-template-columns: repeat(auto-fill, clamp(3rem, 3vw, 5rem)) repeat(auto-fill, clamp(3rem, 3vw, 5rem)) repeat(auto-fill, clamp(3rem, 3vw, 5rem));
-  grid-gap: 3rem;
-  place-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .game-rgb .colors-section .colors .color {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
   width: clamp(3rem, 3vw, 5rem);
   height: clamp(3rem, 3vw, 5rem);
 }
