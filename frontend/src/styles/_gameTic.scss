@@ -1,0 +1,47 @@
+.tic-tac-toe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  .title {
+    font-size: $text-font-size-medium;
+    color: white;
+  }
+
+  .move {
+    font-size: $text-font-size-medium;
+    color: white;
+  }
+
+  .board {
+    display: grid;
+    grid-template-columns: $text-font-size-very-large $text-font-size-very-large $text-font-size-very-large;
+    grid-template-rows: $text-font-size-very-large $text-font-size-very-large $text-font-size-very-large;
+    place-items: center;
+    place-content: center;
+
+    .tile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: solid 1px black;
+      background-color: gray;
+      height: $text-font-size-very-large;
+      width: $text-font-size-very-large;
+    }
+
+    .X-sign:after {
+      font-size: $text-font-size-large;
+      color: black;
+      content: "\0058";
+    }
+
+    .O-sign:after {
+      font-size: $text-font-size-large;
+      color: black;
+      content: "\004F";
+    }
+  }
+}

@@ -17,6 +17,7 @@ const LobbyInfo = () => {
       <h2 className="lobby-info-header">{info.display}</h2>
       <p className="lobby-game-info">{info.description}</p>
       <p className="lobby-game-info">{info.instructions}</p>
+      <p className="lobby-game-info">Max Players: {info.maxplayers}</p>
     </section>
   )
 }

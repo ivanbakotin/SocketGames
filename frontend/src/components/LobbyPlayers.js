@@ -23,7 +23,7 @@ const LobbyPlayers = () => {
     })
 
     socket.on('navigate-game', () => {
-      navigate(`/game/${type}/${id}`, { state: { access: true }});
+      navigate(`/game/${type}/${id}`);
     })
 
     socket.on('kicked', () => {

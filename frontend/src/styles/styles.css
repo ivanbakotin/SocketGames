@@ -257,17 +257,7 @@
           flex-direction: column;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
-}
-
-.whiteboard {
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-color: white;
+  text-align: center;
 }
 
 .gamelist {
@@ -299,6 +289,74 @@
 
 .gamelist .game:first-of-type {
   margin-top: 3rem;
+}
+
+.tic-tac-toe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.tic-tac-toe .title {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+}
+
+.tic-tac-toe .move {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+}
+
+.tic-tac-toe .board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
+      grid-template-columns: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
+  -ms-grid-rows: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
+      grid-template-rows: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
+  place-items: center;
+  place-content: center;
+}
+
+.tic-tac-toe .board .tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 1px black;
+  background-color: gray;
+  height: clamp(5rem, 10vw, 15rem);
+  width: clamp(5rem, 10vw, 15rem);
+}
+
+.tic-tac-toe .board .X-sign:after {
+  font-size: clamp(3rem, 3vw, 5rem);
+  color: black;
+  content: "\0058";
+}
+
+.tic-tac-toe .board .O-sign:after {
+  font-size: clamp(3rem, 3vw, 5rem);
+  color: black;
+  content: "\004F";
 }
 
 .game-rgb {

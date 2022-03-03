@@ -1,22 +1,17 @@
 import { SocketContext } from "../../context/socket";
 import { useContext, useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const GameRGB = () => {
 
   const socket = useContext(SocketContext);
   const { id } = useParams();
-  const { state } = useLocation();
 
   const [ rgb, setRgb ] = useState({});
   const [ colors, setColors ] = useState([]);
   const [ players, setPlayers ] = useState([]);
 
   useEffect(() => {
-
-    if (state.access) {
-      socket.emit("join-game", id);
-    }
 
     socket.emit("get-rgb-colors");
     socket.emit("get-users-rgb", id);
@@ -46,7 +41,7 @@ const GameRGB = () => {
     })
 
     return () => {
-      socket.emit("leave-game", id);
+      socket.emit("leave-game-rgb", id);
       socket.off("send-users");
       socket.off("send-rgb");
       socket.off("send-colors");
