@@ -29,8 +29,8 @@ const GameTicTacToe = () => {
       setBoard(data);
     })
 
-    socket.on("game-over-tic", data => {
-      
+    socket.on("game-over-tic", () => {
+      socket.emit("reset-game-tic", id);
     })
 
     return () => {
@@ -50,7 +50,7 @@ const GameTicTacToe = () => {
 
       <h1 className="title">Tic Tac Toe</h1>
       
-      <div className="score">{}</div>
+      <div className="score">{players[0]?.nickname}: {players[0]?.score} {players[1]?.score} :{players[1]?.nickname}</div>
 
       <div className="move">
         Player move: {players[0]?.move ? players[0]?.nickname : players[1]?.nickname}

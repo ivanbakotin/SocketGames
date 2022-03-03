@@ -315,6 +315,11 @@
   color: white;
 }
 
+.tic-tac-toe .score {
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+}
+
 .tic-tac-toe .move {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
