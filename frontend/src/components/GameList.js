@@ -17,20 +17,21 @@ const GameList = () => {
   }
 
   return (
-    <section className="gamelist">
-      <h1>Choose a game to play!</h1>
+    <article className="gamelist">
+      <h1 className="title">Choose a game to play!</h1>
+      <section className="games">
       {gameList.map(game => {
         return (
-          <div 
-            key={game.name}
-            onClick={goToLobby} 
-            name={game.name} 
-            className="game">
-            {game.display}
+          <div className="game" key={game.name} onClick={goToLobby} name={game.name}>
+            <img name={game.name} className="game-image" src={game.img} />
+            <div name={game.name} className="game-title">
+              {game.display}
+            </div>
           </div>
         )
       })}
-    </section>
+      </section>
+    </article>
   )
 }
 

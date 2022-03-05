@@ -267,31 +267,38 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: clamp(3rem, 3vw, 5rem);
-  color: white;
   gap: 3rem;
+  margin: 3rem;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-radius: 1rem;
-  margin: 3rem;
+}
+
+.gamelist .title {
   text-align: center;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+  margin: 1rem;
 }
 
-.gamelist .game:first-of-type {
-  margin-top: 3rem;
+.gamelist .games {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: clamp(3rem, 3vw, 5rem);
+  margin: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.tic-tac-toe {
+.gamelist .games .game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,12 +309,59 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-color: #3f3c3c;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  -webkit-box-shadow: -7px 5px 7px #333232;
+          box-shadow: -7px 5px 7px #333232;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.gamelist .games .game .game-image {
+  height: clamp(8rem, 10vw, 15rem);
+  width: clamp(8rem, 10vw, 15rem);
+  pointer-events: none;
+}
+
+.gamelist .games .game .game-title {
+  padding: 1rem;
+  text-align: center;
+  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  color: white;
+  text-decoration: underline;
+}
+
+.gamelist .games .game:hover {
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+  opacity: 0.7;
+}
+
+.tic-tac-toe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-bottom: solid 2px white;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
 }
 
 .tic-tac-toe .title {
@@ -316,24 +370,23 @@
 }
 
 .tic-tac-toe .score {
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
+  word-break: break-all;
 }
 
 .tic-tac-toe .move {
-  font-size: clamp(2rem, 2.5vw, 3.5rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
 }
 
 .tic-tac-toe .board {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
-      grid-template-columns: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
-  -ms-grid-rows: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
-      grid-template-rows: clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem) clamp(5rem, 10vw, 15rem);
-  place-items: center;
-  place-content: center;
+  -ms-grid-columns: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
+      grid-template-columns: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
+  -ms-grid-rows: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
+      grid-template-rows: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
 }
 
 .tic-tac-toe .board .tile {
@@ -348,19 +401,17 @@
           align-items: center;
   border: solid 1px black;
   background-color: gray;
-  height: clamp(5rem, 10vw, 15rem);
-  width: clamp(5rem, 10vw, 15rem);
+  height: clamp(8rem, 10vw, 15rem);
+  width: clamp(8rem, 10vw, 15rem);
 }
 
 .tic-tac-toe .board .X-sign:after {
-  font-size: clamp(3rem, 3vw, 5rem);
-  color: black;
+  font-size: clamp(8rem, 10vw, 15rem);
   content: "\0058";
 }
 
 .tic-tac-toe .board .O-sign:after {
-  font-size: clamp(3rem, 3vw, 5rem);
-  color: black;
+  font-size: clamp(8rem, 10vw, 15rem);
   content: "\004F";
 }
 

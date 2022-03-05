@@ -1,9 +1,12 @@
 .tic-tac-toe {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   flex-grow: 1;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: solid 2px white;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
 
   .title {
     font-size: $text-font-size-medium;
@@ -11,12 +14,13 @@
   }
 
   .score {
-    font-size: $text-font-size-medium;
-    color: white;
+    font-size: $text-font-size-small;
+    color: white;  
+    word-break: break-all;  
   }
 
   .move {
-    font-size: $text-font-size-medium;
+    font-size: $text-font-size-small;
     color: white;
   }
 
@@ -24,8 +28,6 @@
     display: grid;
     grid-template-columns: $text-font-size-very-large $text-font-size-very-large $text-font-size-very-large;
     grid-template-rows: $text-font-size-very-large $text-font-size-very-large $text-font-size-very-large;
-    place-items: center;
-    place-content: center;
 
     .tile {
       display: flex;
@@ -38,14 +40,12 @@
     }
 
     .X-sign:after {
-      font-size: $text-font-size-large;
-      color: black;
+      font-size: $text-font-size-very-large;    
       content: "\0058";
     }
 
     .O-sign:after {
-      font-size: $text-font-size-large;
-      color: black;
+      font-size: $text-font-size-very-large;     
       content: "\004F";
     }
   }
