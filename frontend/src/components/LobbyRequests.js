@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const LobbyRequests = () => {
-  const { id, type } = useParams();
+  const { id } = useParams();
   const socket = useContext(SocketContext);
   const [players, setPlayers] = useState([]);
 

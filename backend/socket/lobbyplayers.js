@@ -3,7 +3,7 @@ const constants = require("../utils/variables.js");
 const crypto = require("crypto");
 
 module.exports = function (socket, io) {
-  socket.on("setup-lobby", () => {
+  socket.on("setup-lobby", (name) => {
     let id;
 
     do {
@@ -21,7 +21,7 @@ module.exports = function (socket, io) {
       ready: false,
     };
 
-    socket.emit("send-link", id);
+    socket.emit("send-link", id, name);
   });
 
   socket.on("leave-lobby", (id) => {

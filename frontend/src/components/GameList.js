@@ -1,18 +1,24 @@
 import { gameList } from "../utils/variables";
 import { useNavigate } from "react-router-dom";
 import { SocketContext } from "../context/socket";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const GameList = () => {
   const socket = useContext(SocketContext);
   const navigate = useNavigate();
 
-  function goToLobby(e) {
-    socket.emit("setup-lobby");
-
-    socket.on("send-link", (id) => {
-      navigate(`/lobby/${e.target.getAttribute("name")}/${id}`);
+  useEffect(() => {
+    socket.on("send-link", (id, name) => {
+      navigate(`/lobby/${name}/${id}`);
     });
+
+    return () => {
+      socket.off("send-link");
+    };
+  }, []);
+
+  function goToLobby(e) {
+    socket.emit("setup-lobby", e.target.getAttribute("name"));
   }
 
   return (
