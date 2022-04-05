@@ -1,33 +1,33 @@
 .nickname-form {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: flex-start;
-    background-color: rgb(66, 64, 64);
-    padding: 1rem;
-    margin: 3rem;
-    border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: flex-start;
+  background-color: rgb(66, 64, 64);
+  padding: 1rem;
+  margin: 3rem;
+  border-radius: 2rem;
 
-    * {
-        margin: 0.5rem 1rem;
-    }
+  * {
+    margin: 0.5rem 1rem;
+  }
 
-    input {
-      font-size: $text-font-size-small;
-      outline: none;
-      border: none;
-      border-bottom: 2px black solid;
-      border-radius: 1rem;
-      padding: 0.2rem;
-    }
+  input {
+    font-size: $text-font-size-small;
+    outline: none;
+    border: none;
+    border-bottom: 2px black solid;
+    border-radius: 1rem;
+    padding: 0.2rem;
+  }
 
-    label {
-        font-size: $text-font-size-small;
-        color: white;
-    }
-    
-    button {
-        font-size: $text-font-size-small;
-        padding: 0.1rem;
-    }
+  label {
+    font-size: $text-font-size-small;
+    color: white;
+  }
+
+  button {
+    font-size: $text-font-size-small;
+    padding: 0.1rem;
+  }
 }

@@ -15,7 +15,9 @@ body {
   overscroll-behavior: contain;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   font-size: 62.5%;

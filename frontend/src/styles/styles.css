@@ -1,40 +1,28 @@
 .header {
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
-
 .header h1 {
   font-size: clamp(3rem, 3vw, 5rem);
   padding: 4%;
 }
-
 .header h2 {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
 }
 
 .nickname-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  background-color: #424040;
+  flex-direction: column;
+  align-self: center;
+  align-items: flex-start;
+  background-color: rgb(66, 64, 64);
   padding: 1rem;
   margin: 3rem;
   border-radius: 2rem;
 }
-
 .nickname-form * {
   margin: 0.5rem 1rem;
 }
-
 .nickname-form input {
   font-size: clamp(1.5rem, 2vw, 3rem);
   outline: none;
@@ -43,122 +31,87 @@
   border-radius: 1rem;
   padding: 0.2rem;
 }
-
 .nickname-form label {
   font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
 }
-
 .nickname-form button {
   font-size: clamp(1.5rem, 2vw, 3rem);
   padding: 0.1rem;
 }
 
 .lobby {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
-
 .lobby .lobby-left {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-grow: 1;
+  flex-basis: 50%;
 }
 
 .lobby-players {
   padding: 1rem;
   margin: 2rem;
   border-radius: 2rem;
-  background-color: #494848;
+  background-color: rgb(73, 72, 72);
   font-size: clamp(2rem, 2.5vw, 3.5rem);
 }
-
 .lobby-players .lobby-players-header {
   color: white;
   border-bottom: 1px solid white;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
 }
-
 .lobby-players .lobby-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .lobby-players .lobby-link div {
   color: white;
   font-size: clamp(1.5rem, 2vw, 3rem);
   word-break: break-all;
 }
-
 .lobby-players .lobby-link button {
   font-size: clamp(1.5rem, 2vw, 3rem);
   margin-left: 1rem;
 }
-
 .lobby-players button {
   margin-bottom: 1rem;
   margin-right: 1rem;
   padding: 0.2rem;
 }
-
 .lobby-players .player-list .player {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .lobby-players .player-list .player p {
   font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
   margin-right: 2rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   word-break: break-all;
 }
-
 .lobby-players .player-list .player button {
   font-size: clamp(1.5rem, 2vw, 3rem);
-  background-color: #a13232;
+  background-color: rgb(161, 50, 50);
 }
-
 .lobby-players .player-list .player .active {
-  background-color: #48a165;
+  background-color: rgb(72, 161, 101);
 }
 
 .lobby-info {
-  background-color: #494848;
+  background-color: rgb(73, 72, 72);
   padding: 1rem;
   margin: 2rem;
   border-radius: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .lobby-info .lobby-info-header {
   color: white;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   border-bottom: 1px solid white;
 }
-
 .lobby-info .lobby-game-info {
   color: white;
   font-size: clamp(1.5rem, 2vw, 3rem);
@@ -169,7 +122,6 @@
 .lobby-chat {
   margin: 2rem;
 }
-
 .lobby-chat .chat-header {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -178,16 +130,14 @@
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   border-bottom: white 1px solid;
 }
-
 .lobby-chat .messages {
   height: 30rem;
-  background-color: #7c7c7c;
+  background-color: rgb(124, 124, 124);
   overflow-y: auto;
 }
-
 .lobby-chat .messages .message {
   border-radius: 1rem;
-  background-color: #4c5f52;
+  background-color: rgb(76, 95, 82);
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
   margin: 0.5rem;
@@ -196,138 +146,93 @@
   word-wrap: break-word;
   line-height: 1.2;
 }
-
 .lobby-chat .messages .right {
   margin-left: auto;
-  background-color: #48a165;
+  background-color: rgb(72, 161, 101);
 }
-
 .lobby-chat form input {
   font-size: clamp(1.5rem, 2vw, 3rem);
   outline: none;
   border: none;
   border-bottom: black 1px solid;
 }
-
 .lobby-chat form button {
   font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
 .lobby-requests {
-  background-color: #494848;
+  background-color: rgb(73, 72, 72);
   padding: 1rem;
   margin: 2rem;
   border-radius: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .lobby-requests .lobby-requests-header {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
   border-bottom: white solid 1px;
   margin-bottom: 1rem;
 }
-
 .lobby-requests .request {
   color: white;
   font-size: clamp(1.5rem, 2vw, 3rem);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
 
 .lobby-waiting {
-  background-color: #494848;
+  background-color: rgb(73, 72, 72);
   padding: 1rem;
   margin: 2rem;
   border-radius: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
   text-align: center;
 }
 
 .gamelist {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-grow: 1;
+  flex-direction: column;
   gap: 3rem;
   margin: 3rem;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-radius: 1rem;
 }
-
 .gamelist .title {
   text-align: center;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
   margin: 1rem;
 }
-
 .gamelist .games {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: clamp(3rem, 3vw, 5rem);
   margin: 1rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .gamelist .games .game {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #3f3c3c;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(63, 60, 60);
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   cursor: pointer;
   padding: 1rem;
-  -webkit-box-shadow: -7px 5px 7px #333232;
-          box-shadow: -7px 5px 7px #333232;
-  -webkit-transition: -webkit-transform 0.3s linear;
-  transition: -webkit-transform 0.3s linear;
+  box-shadow: -7px 5px 7px rgb(51, 50, 50);
   transition: transform 0.3s linear;
-  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
-
 .gamelist .games .game .game-image {
   height: clamp(8rem, 10vw, 15rem);
   width: clamp(8rem, 10vw, 15rem);
   pointer-events: none;
 }
-
 .gamelist .games .game .game-title {
   padding: 1rem;
   text-align: center;
@@ -335,183 +240,126 @@
   color: white;
   text-decoration: underline;
 }
-
 .gamelist .games .game:hover {
-  -webkit-transform: translateY(-2rem);
-          transform: translateY(-2rem);
+  transform: translateY(-2rem);
   opacity: 0.7;
 }
 
 .tic-tac-toe {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-evenly;
   border-bottom: solid 2px white;
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
-
 .tic-tac-toe .title {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
 }
-
 .tic-tac-toe .score {
   font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
   word-break: break-all;
 }
-
 .tic-tac-toe .move {
   font-size: clamp(1.5rem, 2vw, 3rem);
   color: white;
 }
-
 .tic-tac-toe .board {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
-      grid-template-columns: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
-  -ms-grid-rows: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
-      grid-template-rows: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
+  grid-template-columns: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
+  grid-template-rows: clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem) clamp(8rem, 10vw, 15rem);
 }
-
 .tic-tac-toe .board .tile {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border: solid 1px black;
   background-color: gray;
   height: clamp(8rem, 10vw, 15rem);
   width: clamp(8rem, 10vw, 15rem);
 }
-
 .tic-tac-toe .board .X-sign:after {
   font-size: clamp(8rem, 10vw, 15rem);
-  content: "\0058";
+  content: "X";
 }
-
 .tic-tac-toe .board .O-sign:after {
   font-size: clamp(8rem, 10vw, 15rem);
-  content: "\004F";
+  content: "O";
 }
 
 .game-rgb {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 .game-rgb .title {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
 }
-
 .game-rgb .rgb {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
   border-bottom: 1px solid white;
   margin: 1rem;
 }
-
 .game-rgb .correct {
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   color: white;
   border-bottom: 1px solid white;
   margin: 1rem;
 }
-
 .game-rgb .players {
   margin: 2rem;
 }
-
 .game-rgb .players .player {
   margin: 1rem;
   font-size: clamp(1.5rem, 2vw, 3rem);
   word-break: break-all;
   color: white;
 }
-
 .game-rgb .colors-section {
   text-align: center;
 }
-
 .game-rgb .colors-section .color-title {
   font-size: clamp(1.5rem, 2vw, 3rem);
   margin: 3rem;
   color: white;
 }
-
 .game-rgb .colors-section .colors {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 .game-rgb .colors-section .colors .color {
-  -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
+  flex-basis: 33%;
   width: clamp(3rem, 3vw, 5rem);
   height: clamp(3rem, 3vw, 5rem);
 }
 
 body {
-  overscroll-behavior: contain;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   font-size: 62.5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 #root {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
-  background-color: #1b1b1b;
-}
-/*# sourceMappingURL=styles.css.map */
+  background-color: rgb(27, 27, 27);
+}/*# sourceMappingURL=styles.css.map */

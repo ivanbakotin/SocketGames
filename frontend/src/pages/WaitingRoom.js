@@ -4,10 +4,10 @@ import LobbyWaiting from "../components/LobbyWaiting";
 const WaitingRoom = () => {
   return (
     <>
-    <Nickname />
-    <LobbyWaiting />  
+      <Nickname />
+      <LobbyWaiting />
     </>
-  )
-}
+  );
+};
 
 export default WaitingRoom;

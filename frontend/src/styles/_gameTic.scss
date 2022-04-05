@@ -15,8 +15,8 @@
 
   .score {
     font-size: $text-font-size-small;
-    color: white;  
-    word-break: break-all;  
+    color: white;
+    word-break: break-all;
   }
 
   .move {
@@ -40,12 +40,12 @@
     }
 
     .X-sign:after {
-      font-size: $text-font-size-very-large;    
+      font-size: $text-font-size-very-large;
       content: "\0058";
     }
 
     .O-sign:after {
-      font-size: $text-font-size-very-large;     
+      font-size: $text-font-size-very-large;
       content: "\004F";
     }
   }

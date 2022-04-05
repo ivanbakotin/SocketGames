@@ -22,10 +22,10 @@
     margin: 1rem;
   }
 
-  .players {    
+  .players {
     margin: 2rem;
 
-    .player {    
+    .player {
       margin: 1rem;
       font-size: $text-font-size-small;
       word-break: break-all;
@@ -48,7 +48,7 @@
       gap: 5rem;
       align-items: center;
       justify-content: center;
-  
+
       .color {
         flex-basis: 33%;
         width: $text-font-size-large;

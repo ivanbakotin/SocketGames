@@ -1,13 +1,13 @@
-import GameList from "../components/GameList"
-import Header from "../components/Header"
+import GameList from "../components/GameList";
+import Header from "../components/Header";
 
 const Landing = () => {
   return (
     <>
-    <Header />
-    <GameList />
+      <Header />
+      <GameList />
     </>
-  )
-}
+  );
+};
 
 export default Landing;
