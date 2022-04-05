@@ -47,7 +47,7 @@ const LobbyPlayers = () => {
   }
 
   function startGame() {
-    socket.emit("start-game", id);
+    socket.emit("start-game", id, type);
   }
 
   function setMute(e) {

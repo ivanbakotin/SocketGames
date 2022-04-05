@@ -51,4 +51,18 @@ function checkIfHost(socket, id) {
   return socket?.lobby?.host && socket?.lobby?.room == id;
 }
 
-module.exports = { getUsers, checkReady, checkLobbyExists, checkIfHost };
+function checkMaxPlayers(game, io, id) {
+  const clients = io.sockets.adapter.rooms.get(id);
+  if (clients) {
+    return clients.size == game.maxplayers;
+  }
+  return false;
+}
+
+module.exports = {
+  checkMaxPlayers,
+  getUsers,
+  checkReady,
+  checkLobbyExists,
+  checkIfHost,
+};

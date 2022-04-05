@@ -1,5 +1,5 @@
-export const gameList = [
-  {
+const gameList = {
+  tictactoe: {
     maxplayers: 2,
     display: "Tic Tac Toe",
     name: "tictactoe",
@@ -8,7 +8,7 @@ export const gameList = [
     instructions:
       "R-Red, G-Green, B-Blue. Higher the number stronger the corresponding color.",
   },
-  {
+  rgb: {
     maxplayers: 4,
     display: "RGB Game",
     name: "rgb",
@@ -17,4 +17,6 @@ export const gameList = [
     instructions:
       "R-Red, G-Green, B-Blue. Higher the number stronger the corresponding color.",
   },
-];
+};
+
+module.exports = { gameList: gameList };

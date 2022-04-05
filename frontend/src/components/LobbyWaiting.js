@@ -14,6 +14,10 @@ const LobbyWaiting = () => {
       navigate(`/lobby/${type}/${id}`);
     });
 
+    socket.on("declined", () => {
+      navigate(`/`);
+    });
+
     return () => {
       socket.off("receive-user");
       socket.off("accepted");

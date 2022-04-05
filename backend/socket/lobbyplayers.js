@@ -1,4 +1,5 @@
 const global = require("../utils/global.js");
+const constants = require("../utils/variables.js");
 const crypto = require("crypto");
 
 module.exports = function (socket, io) {
@@ -75,9 +76,11 @@ module.exports = function (socket, io) {
     global.getUsers(io, id);
   });
 
-  socket.on("start-game", (id) => {
-    if (global.checkReady(io, id)) {
-      io.sockets.in(id).emit("navigate-game");
+  socket.on("start-game", (id, gameName) => {
+    if (global.checkMaxPlayers(constants.gameList[gameName], io, id)) {
+      if (global.checkReady(io, id)) {
+        io.sockets.in(id).emit("navigate-game");
+      }
     }
   });
 };

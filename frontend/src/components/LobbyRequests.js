@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const LobbyRequests = () => {
-  const { id } = useParams();
+  const { id, type } = useParams();
   const socket = useContext(SocketContext);
   const [players, setPlayers] = useState([]);
 
@@ -21,7 +21,9 @@ const LobbyRequests = () => {
     socket.emit("accept-request", e.target.name, id);
   }
 
-  function declineRequest(e) {}
+  function declineRequest(e) {
+    socket.emit("decline-request", e.target.name, id);
+  }
 
   return (
     <section className="lobby-requests">
